@@ -1,0 +1,5 @@
+06/20/2025 09:08:58 +03:00Now listening on: "https://localhost:7287"
+06/20/2025 09:08:58 +03:00Now listening on: "http://localhost:5157"
+06/20/2025 09:08:58 +03:00Application started. Press Ctrl+C to shut down.
+06/20/2025 09:08:58 +03:00Hosting environment: "Development"
+06/20/2025 09:08:58 +03:00Content root path: "E:\Route ASP.net\الهلال_كورسFull_Code_(Project)\الهلالي كورس\SurveyBasket\SurveyBasket.API"

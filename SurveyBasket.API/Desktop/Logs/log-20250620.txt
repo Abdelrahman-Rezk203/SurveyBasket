@@ -1,0 +1,15 @@
+2025-06-20 09:01:21.226 +03:00 [INF] Now listening on: https://localhost:7287
+2025-06-20 09:01:21.268 +03:00 [INF] Now listening on: http://localhost:5157
+2025-06-20 09:01:21.354 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 09:01:21.356 +03:00 [INF] Hosting environment: Development
+2025-06-20 09:01:21.357 +03:00 [INF] Content root path: E:\Route ASP.net\الهلال_كورسFull_Code_(Project)\الهلالي كورس\SurveyBasket\SurveyBasket.API
+2025-06-20 09:01:58.638 +03:00 [INF] Now listening on: https://localhost:7287
+2025-06-20 09:01:58.668 +03:00 [INF] Now listening on: http://localhost:5157
+2025-06-20 09:01:58.741 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 09:01:58.743 +03:00 [INF] Hosting environment: Development
+2025-06-20 09:01:58.744 +03:00 [INF] Content root path: E:\Route ASP.net\الهلال_كورسFull_Code_(Project)\الهلالي كورس\SurveyBasket\SurveyBasket.API
+06/20/2025 09:06:20 +03:00Now listening on: "https://localhost:7287"
+06/20/2025 09:06:20 +03:00Now listening on: "http://localhost:5157"
+06/20/2025 09:06:20 +03:00Application started. Press Ctrl+C to shut down.
+06/20/2025 09:06:20 +03:00Hosting environment: "Development"
+06/20/2025 09:06:20 +03:00Content root path: "E:\Route ASP.net\الهلال_كورسFull_Code_(Project)\الهلالي كورس\SurveyBasket\SurveyBasket.API"
