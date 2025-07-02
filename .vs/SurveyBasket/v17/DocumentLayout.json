@@ -7,35 +7,35 @@
       "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Abdelrahman22\\AppData\\Roaming\\Microsoft\\UserSecrets\\4c8080ef-8981-49a5-8a89-efa72788dcb9\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\services\\userprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\userprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\repositories\\iauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\repositories\\iauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\fluentvalidations\\changepasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\fluentvalidations\\changepasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Abdelrahman22\\AppData\\Roaming\\Microsoft\\UserSecrets\\4c8080ef-8981-49a5-8a89-efa72788dcb9\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\repositories\\iauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\repositories\\iauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\fluentvalidations\\resetpasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\fluentvalidations\\resetpasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\dtorequestandresponse\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\dtorequestandresponse\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\fluentvalidations\\resetpasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\fluentvalidations\\resetpasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -69,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "IAuth.cs",
               "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Repositories\\IAuth.cs",
               "RelativeDocumentMoniker": "SurveyBasket.API\\Repositories\\IAuth.cs",
@@ -81,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ChangePasswordRequestValidator.cs",
               "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\FluentValidations\\ChangePasswordRequestValidator.cs",
               "RelativeDocumentMoniker": "SurveyBasket.API\\FluentValidations\\ChangePasswordRequestValidator.cs",
@@ -93,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "ResetPasswordRequestValidator.cs",
               "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\FluentValidations\\ResetPasswordRequestValidator.cs",
               "RelativeDocumentMoniker": "SurveyBasket.API\\FluentValidations\\ResetPasswordRequestValidator.cs",
@@ -105,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "ResetPasswordRequest.cs",
               "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\DtoRequestAndResponse\\ResetPasswordRequest.cs",
               "RelativeDocumentMoniker": "SurveyBasket.API\\DtoRequestAndResponse\\ResetPasswordRequest.cs",
@@ -117,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "AuthController.cs",
               "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "SurveyBasket.API\\Controllers\\AuthController.cs",
@@ -135,14 +135,14 @@
               "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\AuthService.cs",
               "ToolTip": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Services\\AuthService.cs",
               "RelativeToolTip": "SurveyBasket.API\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACoBAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwBEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-30T21:12:26.104Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\appsettings.json",
               "RelativeDocumentMoniker": "SurveyBasket.API\\appsettings.json",
@@ -154,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\Abdelrahman22\\AppData\\Roaming\\Microsoft\\UserSecrets\\4c8080ef-8981-49a5-8a89-efa72788dcb9\\secrets.json",
               "ToolTip": "C:\\Users\\Abdelrahman22\\AppData\\Roaming\\Microsoft\\UserSecrets\\4c8080ef-8981-49a5-8a89-efa72788dcb9\\secrets.json",

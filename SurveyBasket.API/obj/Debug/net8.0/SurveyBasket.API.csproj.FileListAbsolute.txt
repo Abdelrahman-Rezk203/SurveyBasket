@@ -473,3 +473,4 @@ E:\Route ASP.net\الهلال_كورسFull_Code_(Project)\الهلالي كور�
 E:\Route ASP.net\الهلال_كورسFull_Code_(Project)\الهلالي كورس\SurveyBasket\SurveyBasket.API\bin\Debug\net8.0\tr-TR\Hangfire.Core.resources.dll
 E:\Route ASP.net\الهلال_كورسFull_Code_(Project)\الهلالي كورس\SurveyBasket\SurveyBasket.API\bin\Debug\net8.0\zh-TW\Hangfire.Core.resources.dll
 E:\Route ASP.net\الهلال_كورسFull_Code_(Project)\الهلالي كورس\SurveyBasket\SurveyBasket.API\bin\Debug\net8.0\zh\Hangfire.Core.resources.dll
+E:\Route ASP.net\الهلال_كورسFull_Code_(Project)\الهلالي كورس\SurveyBasket\SurveyBasket.API\obj\Debug\net8.0\SurveyBasket.API.sourcelink.json
