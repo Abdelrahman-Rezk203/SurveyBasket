@@ -14,6 +14,7 @@ using SurveyBasket.API.Repositories;
 using System.Security.Cryptography;
 using System.Text;
 using Hangfire;
+using SurveyBasket.API.Abstractions.Consts;
 
 namespace SurveyBasket.API.Services
 {
@@ -212,7 +213,10 @@ namespace SurveyBasket.API.Services
 
             var result = await _userManager.ConfirmEmailAsync(User, code);
             if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(User, DefaultRoles.Member);
                 return true;
+            }
 
             var error = result.Errors.First();
             return new Error(error.Code, error.Description, StatusCodes.Status400BadRequest);
