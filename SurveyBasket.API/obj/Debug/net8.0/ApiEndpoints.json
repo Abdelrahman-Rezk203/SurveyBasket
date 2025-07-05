@@ -476,6 +476,16 @@
   },
   {
     "ContainingType": "SurveyBasket.API.Controllers.AuthController",
+    "Method": "GetConfiguration",
+    "RelativePath": "Auth/ResultHashPassword",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SurveyBasket.API.Controllers.AuthController",
     "Method": "RevokeRefreshToken",
     "RelativePath": "Auth/revoke-refresh-token",
     "HttpMethod": "POST",

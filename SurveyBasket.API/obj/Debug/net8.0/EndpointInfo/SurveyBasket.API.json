@@ -372,6 +372,27 @@
         }
       }
     },
+    "/Auth/ResultHashPassword": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "operationId": "Auth_GetConfiguration",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Polls/GetAllCurrentPoll": {
       "get": {
         "tags": [

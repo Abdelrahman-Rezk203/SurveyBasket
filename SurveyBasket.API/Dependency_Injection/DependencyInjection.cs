@@ -116,7 +116,7 @@ namespace SurveyBasket.API.Code_For_Program
             var JwtSettings = configuration.GetSection(JwtOptionPattern.SectionName).Get<JwtOptionPattern>();
 
             service.AddSingleton<IJwtProvider, JwtProvider>();
-            service.AddIdentity<ApplicationUser, IdentityRole>()
+            service.AddIdentity<ApplicationUser, ApplicationRole>()
                    .AddEntityFrameworkStores<ApplicationDbContext>()
                    .AddDefaultTokenProviders();
 

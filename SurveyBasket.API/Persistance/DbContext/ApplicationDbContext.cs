@@ -10,7 +10,7 @@ using System.Security.Claims;
 
 namespace SurveyBasket.API.Persistance.DbContext
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser> //هاتلي من الكلاس ده عشان هو فيه اتنين لسه عاملهم
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser,ApplicationRole,string> //هاتلي من الكلاس ده عشان هو فيه اتنين لسه عاملهم
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 

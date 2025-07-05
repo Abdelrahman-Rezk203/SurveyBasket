@@ -1,11 +1,13 @@
 ﻿
 //using Microsoft.AspNetCore.Identity.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using SurveyBasket.API.Abstractions;
 using SurveyBasket.API.Authentication;
 using SurveyBasket.API.Dto;
 using SurveyBasket.API.DtoRequestAndResponse;
+using SurveyBasket.API.Entities;
 using SurveyBasket.API.Repositories;
 //using RegisterRequest = SurveyBasket.API.DtoRequestAndResponse.RegisterRequest;
 //using ResendConfirmationEmailRequest = SurveyBasket.API.DtoRequestAndResponse.ResendConfirmationEmailRequest;
@@ -134,24 +136,31 @@ namespace SurveyBasket.API.Controllers
         }
 
 
+        [HttpGet("ResultHashPassword")]
+        public IActionResult GetConfiguration()
+        {
+            var hasher = new PasswordHasher<IdentityUser>();
+            var hash = hasher.HashPassword(null!, "P@ssword2003@#");
+            Console.WriteLine("Password Hash:");
+            return Ok(hash);
+        }
 
 
 
 
 
 
-
-            /// [HttpGet("")]
-            /// public  IActionResult test()
-            /// {
-            ///     var configuration = new
-            ///     {
-            ///         MyKey = _configuration["MyKey"],
-            ///         Enviornment = _configuration["ASPNETCORE_ENVIRONMENT"],
-            ///         OneDrive = _configuration["OneDrive"] //On My PC
-            ///     };
-            ///
-            ///     return Ok(configuration);
-            /// }
+        /// [HttpGet("")]
+        /// public  IActionResult test()
+        /// {
+        ///     var configuration = new
+        ///     {
+        ///         MyKey = _configuration["MyKey"],
+        ///         Enviornment = _configuration["ASPNETCORE_ENVIRONMENT"],
+        ///         OneDrive = _configuration["OneDrive"] //On My PC
+        ///     };
+        ///
+        ///     return Ok(configuration);
+        /// }
     }
 }
