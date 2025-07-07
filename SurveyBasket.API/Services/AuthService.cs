@@ -15,6 +15,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Hangfire;
 using SurveyBasket.API.Abstractions.Consts;
+using SurveyBasket.API.Persistance.DbContext;
 
 namespace SurveyBasket.API.Services
 {
@@ -27,6 +28,7 @@ namespace SurveyBasket.API.Services
         private readonly ILogger<AuthService> _logger;
         private readonly IEmailSender _emailSender;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ApplicationDbContext _dbContext;
         private readonly int _refreshTokenExpirstionDay = 14; //Day
         public AuthService(UserManager<ApplicationUser> userManager,
                            IJwtProvider jwtProvider,
@@ -34,7 +36,8 @@ namespace SurveyBasket.API.Services
                           SignInManager<ApplicationUser> signInManager,
                           ILogger<AuthService> logger,
                           IEmailSender emailSender,
-                          IHttpContextAccessor httpContextAccessor
+                          IHttpContextAccessor httpContextAccessor,
+                          ApplicationDbContext dbContext
                           )
         { 
             _userManager = userManager;
@@ -44,6 +47,7 @@ namespace SurveyBasket.API.Services
             _logger = logger;
             _emailSender = emailSender;
             _httpContextAccessor = httpContextAccessor;
+            _dbContext = dbContext;
         }
         public async Task<OneOf<AuthResponse,Error>> GetTokenAsync(string email, string password, CancellationToken cancellationToken = default)
         {
@@ -62,7 +66,8 @@ namespace SurveyBasket.API.Services
 
             if(result.Succeeded)
             {
-            var (token, expiresIn) = _jwtProvider.GenerateToken(find,_configuration);
+                var (roles, permissions) = await GetRoleAndPermissionForUser(find,cancellationToken);
+                var (token, expiresIn) = _jwtProvider.GenerateToken(find,_configuration,roles,permissions);
 
 
             //Refresh Token
@@ -109,8 +114,9 @@ namespace SurveyBasket.API.Services
 
             userRefreshToken.RevokedOn = DateTime.UtcNow;
 
+            var (roles, permissions) = await GetRoleAndPermissionForUser(user ,cancellationToken);
             //New Token
-            var (NewToken, expiresIn) = _jwtProvider.GenerateToken(user, _configuration);
+            var (NewToken, expiresIn) = _jwtProvider.GenerateToken(user, _configuration, roles, permissions);
 
             //New Refresh Token
             var NewRefreshToken = GenareteRefreshToken();
@@ -324,5 +330,22 @@ namespace SurveyBasket.API.Services
             //await Task.CompletedTask;
         }
 
+
+        private async Task<(IEnumerable<string> roles ,IEnumerable<string> permission)> GetRoleAndPermissionForUser(ApplicationUser User , CancellationToken cancellationToken)
+        {
+            var UserRoles = await _userManager.GetRolesAsync(User);
+            var UserPermessions = await _dbContext.Roles
+                .Join(_dbContext.RoleClaims,
+                roles => roles.Id,
+                claims => claims.RoleId,
+                (roles, claims) => new { roles, claims }
+                )
+                .Where(x => UserRoles.Contains(x.roles.Name!))
+                .Select(x => x.claims.ClaimValue)
+                .Distinct()
+                .ToListAsync(cancellationToken);
+
+            return (UserRoles, UserPermessions!);
+        }
     }
 }

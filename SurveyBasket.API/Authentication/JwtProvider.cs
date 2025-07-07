@@ -5,7 +5,8 @@ using SurveyBasket.API.Entities;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-                                                            //using option pattern for this file
+using System.Text.Json;
+//using option pattern for this file
 namespace SurveyBasket.API.Authentication
 {
     public class JwtProvider : IJwtProvider
@@ -16,7 +17,7 @@ namespace SurveyBasket.API.Authentication
         {
             _jwtOption = jwtOption;
         }
-        public (string token, int expireIn) GenerateToken(ApplicationUser applicationUser,IConfiguration configuration)
+        public (string token, int expireIn) GenerateToken(ApplicationUser applicationUser,IConfiguration configuration,IEnumerable<string> roles , IEnumerable<string> permission)
         {
             Claim[] claims =
                 [
@@ -24,7 +25,9 @@ namespace SurveyBasket.API.Authentication
                     new(JwtRegisteredClaimNames.Email,applicationUser.Email!), //email can't Empty
                     new(JwtRegisteredClaimNames.GivenName,applicationUser.FirstName),
                     new(JwtRegisteredClaimNames.FamilyName,applicationUser.LastName),
-                    new(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
+                    new(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
+                    new(nameof(roles) , JsonSerializer.Serialize(roles) , JsonClaimValueTypes.JsonArray),
+                    new(nameof(permission) , JsonSerializer.Serialize(permission) , JsonClaimValueTypes.JsonArray)
 
                 ];
 
