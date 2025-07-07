@@ -414,7 +414,9 @@
         },
         "security": [
           {
-            "Bearer": []
+            "Bearer": [
+              "Member"
+            ]
           }
         ]
       }
@@ -979,7 +981,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/api/ResultVotes/GetVotePerDay/{pollId}": {
@@ -1012,7 +1019,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/api/ResultVotes/GetVotePerQuestion/{pollId}": {
@@ -1045,7 +1057,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
       }
     },
     "/api/Votes/GetAvailableQuestionInPoll/{PollId}": {
@@ -1081,7 +1098,9 @@
         },
         "security": [
           {
-            "Bearer": []
+            "Bearer": [
+              "Member"
+            ]
           }
         ]
       }
@@ -1131,7 +1150,9 @@
         },
         "security": [
           {
-            "Bearer": []
+            "Bearer": [
+              "Member"
+            ]
           }
         ]
       }

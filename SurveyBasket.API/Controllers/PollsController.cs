@@ -1,16 +1,10 @@
-﻿using FluentValidation;
-using Mapster;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.Consts;
 using SurveyBasket.API.Dto.Polls;
-using SurveyBasket.API.Models;
-using SurveyBasket.API.Persistance.DbContext;
-using SurveyBasket.API.Practice_On_Mapster_WithoutProject;
 using SurveyBasket.API.Repositories;
-using System.Reflection.Metadata.Ecma335;
+using SurveyBasket.Authentication.Filters;
 
 namespace SurveyBasket.API.Controllers
 {
@@ -34,15 +28,15 @@ namespace SurveyBasket.API.Controllers
         ///     _poll = poll; //عشان هو لما يعمل ابوجيكت من الكلاس هتبقي فاضيه  null الكنستراكتور بيكون فاضي 
         ///
         /// }
-
+        [Authorize(Roles = DefaultRoles.Member)]
         [HttpGet("GetAllCurrentPoll")]
         public async Task<IActionResult> GetAllCurrentPoll(CancellationToken cancellationToken =default )
         {
             var GetCurrent = await _pollServices.GetCurrentPollAsync(cancellationToken);
             return GetCurrent.IsSuccess ? Ok(GetCurrent.Value) : GetCurrent.ToProblem();
         }
-
         [HttpGet("GetAll")]
+        [HasPermission(Permissions.GetPoll)]
         public async Task<IActionResult> GetAllPolls(CancellationToken cancellationToken = default)
         {
             var poll = await _pollServices.GetAllAsync(cancellationToken);

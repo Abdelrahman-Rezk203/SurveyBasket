@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[1.8.20, )"
             },
+            "Hangfire.Dashboard.Basic.Authentication": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Hangfire.SqlServer": {
               "target": "Package",
               "version": "[1.8.20, )"

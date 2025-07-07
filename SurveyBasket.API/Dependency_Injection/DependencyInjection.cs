@@ -4,19 +4,18 @@ using Hangfire;
 using Mapster;
 using MapsterMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SurveyBasket.API.Authentication;
-using SurveyBasket.API.Dto;
 using SurveyBasket.API.Entities;
-using SurveyBasket.API.Models;
 using SurveyBasket.API.Persistance.DbContext;
 using SurveyBasket.API.Repositories;
 using SurveyBasket.API.Services;
 using SurveyBasket.API.Settings;
+using SurveyBasket.Authentication.Filters;
 using System.Reflection;
 using System.Text;
 namespace SurveyBasket.API.Code_For_Program
@@ -28,15 +27,15 @@ namespace SurveyBasket.API.Code_For_Program
         {
 
             service.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
             service.AddCors(options =>
-                   options.AddPolicy("MyPolicy", x =>
-                                               x.AllowAnyHeader()
-                                               .AllowAnyMethod()
-                                               .AllowAnyOrigin()
-                   )
-            );
+               options.AddDefaultPolicy(builder =>
+                   builder
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .WithOrigins(configuration.GetSection("AllowedOrigins").Get<string[]>()!)
+               )
+           );
 
             service
                 .AddMapster()
@@ -57,7 +56,6 @@ namespace SurveyBasket.API.Code_For_Program
                 .AddScoped<ICacheService, CacheService>()
                 .AddScoped<IUserProfileService, UserProfileService>()
                 .AddTransient<IEmailSender, EmailService>()
-                //.AddHttpContextAccessor()
                 ;
                
          
@@ -115,6 +113,9 @@ namespace SurveyBasket.API.Code_For_Program
 
             var JwtSettings = configuration.GetSection(JwtOptionPattern.SectionName).Get<JwtOptionPattern>();
 
+            service.AddTransient<IAuthorizationHandler, PermissionAuthorizationHandler>();
+            service.AddTransient<IAuthorizationPolicyProvider, PermissionAuthorizationPolicyProvider>();
+
             service.AddSingleton<IJwtProvider, JwtProvider>();
             service.AddIdentity<ApplicationUser, ApplicationRole>()
                    .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -144,10 +145,11 @@ namespace SurveyBasket.API.Code_For_Program
             service.Configure<IdentityOptions>(options =>
             {
                 // Default Lockout settings.
-                //options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-                //options.Lockout.MaxFailedAccessAttempts = 3;
-                //options.Lockout.AllowedForNewUsers = true;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 3;
+                options.Lockout.AllowedForNewUsers = true;
                 options.Password.RequiredLength = 8;
+                  // لازم تعمل تاكيد للحساب عشان تقدر تدخل
                 options.SignIn.RequireConfirmedEmail = true;   //عشان ننفذ دول  SignInManager  لازم استخدم انتفير ال  
                 options.User.RequireUniqueEmail = true;
             });

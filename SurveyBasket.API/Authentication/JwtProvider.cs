@@ -17,7 +17,7 @@ namespace SurveyBasket.API.Authentication
         {
             _jwtOption = jwtOption;
         }
-        public (string token, int expireIn) GenerateToken(ApplicationUser applicationUser,IConfiguration configuration,IEnumerable<string> roles , IEnumerable<string> permission)
+        public (string token, int expireIn) GenerateToken(ApplicationUser applicationUser,IConfiguration configuration,IEnumerable<string> roles , IEnumerable<string> Permissions)
         {
             Claim[] claims =
                 [
@@ -27,7 +27,7 @@ namespace SurveyBasket.API.Authentication
                     new(JwtRegisteredClaimNames.FamilyName,applicationUser.LastName),
                     new(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
                     new(nameof(roles) , JsonSerializer.Serialize(roles) , JsonClaimValueTypes.JsonArray),
-                    new(nameof(permission) , JsonSerializer.Serialize(permission) , JsonClaimValueTypes.JsonArray)
+                    new(nameof(Permissions) , JsonSerializer.Serialize(Permissions) , JsonClaimValueTypes.JsonArray)
 
                 ];
 

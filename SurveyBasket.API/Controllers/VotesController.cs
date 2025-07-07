@@ -1,23 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.OutputCaching;
 using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.Consts;
 using SurveyBasket.API.DtoRequestAndResponse.Vote;
-using SurveyBasket.API.DtoRequestAndResponse.VoteAnswer;
-using SurveyBasket.API.Entities;
 using SurveyBasket.API.Extentions;
-using SurveyBasket.API.Persistance.DbContext;
 using SurveyBasket.API.Repositories;
-using SurveyBasket.API.Services;
-using System.Security.Claims;
 
 namespace SurveyBasket.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
-   
+    [Authorize(Roles = DefaultRoles.Member)]
     public class VotesController : ControllerBase
     {
         private readonly IVoteSevice _voteSevice;

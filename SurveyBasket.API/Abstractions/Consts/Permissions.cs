@@ -4,7 +4,6 @@
     {
         public static string Type { get; } = "Permissions";
 
-        //Authorize   هعمل اللي عليهم ال 
         public const string GetPoll   = "polls:read";
         public const string AddPoll   = "polls:Add";
         public const string UpdatePoll   = "polls:Update";
@@ -14,6 +13,7 @@
         public const string GetQuestion   = "questions:read";
         public const string AddQuestion   = "questions:Add";
         public const string UpdateQuestion   = "questions:Update";
+        public const string UpdateToggleAnswers = "Answers:UpdateToggle";
 
 
         public const string GetUsers   = "users:read";

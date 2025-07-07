@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.Consts;
 using SurveyBasket.API.Repositories;
+using SurveyBasket.Authentication.Filters;
 
 namespace SurveyBasket.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [HasPermission(Permissions.Result)]
     public class ResultVotesController : ControllerBase
     {
         private readonly IResultVote _resultVote;

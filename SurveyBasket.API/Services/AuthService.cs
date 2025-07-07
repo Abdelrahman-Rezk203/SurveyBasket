@@ -62,9 +62,11 @@ namespace SurveyBasket.API.Services
             //if (IsValidPass is false)
             //    return UserErrors.InvalidCredential;
 
-            var result = await _signInManager.PasswordSignInAsync(find, password, false, false);
+            var result = await _signInManager.PasswordSignInAsync(find, password, false, true);
+            if(result.IsLockedOut)
+                return UserErrors.UserIsLockedOut;
 
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 var (roles, permissions) = await GetRoleAndPermissionForUser(find,cancellationToken);
                 var (token, expiresIn) = _jwtProvider.GenerateToken(find,_configuration,roles,permissions);
@@ -82,9 +84,7 @@ namespace SurveyBasket.API.Services
 
              await _userManager.UpdateAsync(find);
 
-            var response =  new AuthResponse(find.Id, find.FirstName, find.LastName, find.Email!, token, expiresIn, refreshToken , refreshTokenExpiration);
-
-            return response;
+            return  new AuthResponse(find.Id, find.FirstName, find.LastName, find.Email!, token, expiresIn, refreshToken , refreshTokenExpiration);
 
             }
 

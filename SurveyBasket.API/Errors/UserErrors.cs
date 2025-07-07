@@ -26,6 +26,8 @@ namespace SurveyBasket.API.Errors
        
         public static readonly Error ChangePaswordInvalid = new("User.ChangePaswordInvalid ", "Invalid CurrentPassword", StatusCodes.Status400BadRequest);
         
+        public static readonly Error UserIsLockedOut = new("User.UserIsLockedOut ", "Account is locked. Try again After Few Minutes", StatusCodes.Status400BadRequest);
+        
 
     
     

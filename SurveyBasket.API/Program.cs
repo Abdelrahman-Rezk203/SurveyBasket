@@ -2,24 +2,15 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Hangfire;
+using HangfireBasicAuthenticationFilter;
 using Mapster;
 using MapsterMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
+
 using NSwag;
 using NSwag.Generation.Processors.Security;
 using Serilog;
 using SurveyBasket.API.Code_For_Program;
-using SurveyBasket.API.Entities;
-using SurveyBasket.API.Models;
-using SurveyBasket.API.Persistance.DbContext;
-using SurveyBasket.API.Repositories;
-using SurveyBasket.API.Services;
-using System.Reflection;
-using System.Text;
+
 
 namespace SurveyBasket.API
 
@@ -69,6 +60,7 @@ namespace SurveyBasket.API
             //var configuration = builder.Configuration["MyKey"];
 
             builder.Services.AddDependies(builder.Configuration); //هنا  بناديهم جوه دي بعدين انادي واحده بس والباقي جواها مرتبط بيها ف الكود 
+            
             builder.Services.AddDistributedMemoryCache();
 
 
@@ -102,11 +94,29 @@ namespace SurveyBasket.API
                 app.UseSwaggerUI();
             }
             app.UseSerilogRequestLogging(); //[09:17:47 INF] HTTP POST /Auth/Login responded 400 in 1209.9089 ms
+
             app.UseHttpsRedirection();
-           
-            app.UseHangfireDashboard("/jobs");
-            
-            app.UseCors("MyPolicy");
+
+            app.UseHangfireDashboard("/jobs", new DashboardOptions
+            {
+                Authorization =
+                [
+                    new HangfireCustomBasicAuthenticationFilter
+                    {
+                        User = app.Configuration.GetValue<string>("HangfireSettings:Username"),
+                        Pass = app.Configuration.GetValue<string>("HangfireSettings:Password")
+                    }
+                ],
+                DashboardTitle = "Survey Basket Dashboard",
+                //IsReadOnlyFunc = (DashboardContext conext) => true
+            });
+            var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+            using var scope = scopeFactory.CreateScope();
+            //var notificationService = scope.ServiceProvider.GetRequiredService<INotificationService>();
+            //RecurringJob.AddOrUpdate("SendNewPollsNotification", () => notificationService.SendNewPollsNotification(null), Cron.Daily);
+
+            app.UseCors();
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
