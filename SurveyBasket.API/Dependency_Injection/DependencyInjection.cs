@@ -53,6 +53,7 @@ namespace SurveyBasket.API.Code_For_Program
                 .AddScoped<IQuestionService, QuestionService>()
                 .AddScoped<IVoteSevice, VoteService>()
                 .AddScoped<IResultVote, ResultVote>()
+                .AddScoped<IRoleService, RoleService>()
                 .AddScoped<ICacheService, CacheService>()
                 .AddScoped<IUserProfileService, UserProfileService>()
                 .AddTransient<IEmailSender, EmailService>()

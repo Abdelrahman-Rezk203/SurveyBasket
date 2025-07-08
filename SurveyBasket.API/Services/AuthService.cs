@@ -63,6 +63,7 @@ namespace SurveyBasket.API.Services
             //    return UserErrors.InvalidCredential;
 
             var result = await _signInManager.PasswordSignInAsync(find, password, false, true);
+
             if(result.IsLockedOut)
                 return UserErrors.UserIsLockedOut;
 

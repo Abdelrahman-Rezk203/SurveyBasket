@@ -1,5 +1,4 @@
 ﻿using Mapster;
-using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Hybrid;
 using SurveyBasket.API.Abstractions;
@@ -9,9 +8,6 @@ using SurveyBasket.API.Entities;
 using SurveyBasket.API.Errors;
 using SurveyBasket.API.Persistance.DbContext;
 using SurveyBasket.API.Repositories;
-using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Threading;
 
 namespace SurveyBasket.API.Services
 {
