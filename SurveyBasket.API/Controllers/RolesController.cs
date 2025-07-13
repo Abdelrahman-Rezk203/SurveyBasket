@@ -54,7 +54,7 @@ namespace SurveyBasket.API.Controllers
 
 
         [HttpPut("AddToggleStatusForRole/{Id}")]
-        [HasPermission(Permissions.addRoles)]
+        [HasPermission(Permissions.UpdateUsers)]
         public async Task<IActionResult> AddToggleStatusForRole([FromRoute] string Id , CancellationToken cancellationToken = default)
         {
             var AddToggleStatus = await _roleService.AddToggleStatusForRoleAsync(Id, cancellationToken);

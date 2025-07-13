@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using SurveyBasket.API.Dto.Polls;
 using SurveyBasket.API.DtoRequestAndResponse.Question;
+using SurveyBasket.API.DtoRequestAndResponse.Users;
 using SurveyBasket.API.Entities;
 using SurveyBasket.API.Models;
 
@@ -17,9 +18,14 @@ namespace SurveyBasket.API.Mapster_Mapping
             //لما اعمل اد تتضاف وترجع ف الريسبونس بردوا 
             config.NewConfig<QuestionRequest, Question>()
                  .Map(x => x.Answers, x => x.Answers.Select(x => new Answer { Content = x })); //الانسر هجيبها من الكونتنت اللي ف الانسر عشان كده انا عملت اوبجكت
-            //طالما م عارف يحول انا بقوله الانسر هتحولها كده 
-            //لان الايور اللي طلع انو م عارف يحول من سترنج الي انسر 
+                                                                                               //طالما م عارف يحول انا بقوله الانسر هتحولها كده 
+                                                                                               //لان الايور اللي طلع انو م عارف يحول من سترنج الي انسر 
 
+
+
+            config.NewConfig<CreateUserRequest, ApplicationUser>()
+                .Map(dest => dest.UserName, src => src.Email)
+                .Map(dest => dest.EmailConfirmed, src => true);
 
         }
     }

@@ -1,10 +1,10 @@
-﻿namespace SurveyBasket.API.DtoRequestAndResponse
+﻿namespace SurveyBasket.API.DtoRequestAndResponse.Users
 {
-    public record UserProfileRequest(
+    public record UserProfileResponse(
         string UserName,
         string Email,
         string FirstName,
         string LastName
         );
-   
+    
 }

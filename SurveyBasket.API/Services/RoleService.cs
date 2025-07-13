@@ -53,14 +53,9 @@ namespace SurveyBasket.API.Services
                 await _dbContext.AddRangeAsync(Permission, cancellationToken);
                 await _dbContext.SaveChangesAsync(cancellationToken);
             }
-
-
             if(!AddRole.Succeeded)
                return Result.Failure<RoleDetailsResponse>(RoleError.AddRoleFailure);
-
-
             var response = new RoleDetailsResponse(NewRole.Id, NewRole.Name, NewRole.IsDeleted, request.Permissions);
-
             return Result.Success(response);
 
         }
@@ -115,7 +110,6 @@ namespace SurveyBasket.API.Services
                 return Result.Failure(RoleError.UpdateRoleFailure);
 
             return Result.Success(UpdateRole);
-
         }
 
 
@@ -123,7 +117,6 @@ namespace SurveyBasket.API.Services
         {
             var roles = await _roleManager.Roles
                 .Where(x => !x.IsDefault && (!x.IsDeleted || IncludeDisable == true)).ToListAsync(cancellationToken);
-            
             return Result.Success(roles.Adapt<IEnumerable<RoleResponse>>());
         
         }

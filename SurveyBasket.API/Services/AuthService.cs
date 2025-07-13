@@ -57,15 +57,18 @@ namespace SurveyBasket.API.Services
             if (find is null)
                 return UserErrors.InvalidCredential;
 
+            if(find.IsDisabled)
+                return UserErrors.DisabledUser;
+
             ////check Password 
             //var IsValidPass = await _userManager.CheckPasswordAsync(find,password);
             //if (IsValidPass is false)
             //    return UserErrors.InvalidCredential;
 
-            var result = await _signInManager.PasswordSignInAsync(find, password, false, true);
+            var result = await _signInManager.PasswordSignInAsync(find, password, true, true);
 
-            if(result.IsLockedOut)
-                return UserErrors.UserIsLockedOut;
+            if (result.IsLockedOut)
+                return UserErrors.UserLockedOut;
 
             if (result.Succeeded)
             {
@@ -105,7 +108,10 @@ namespace SurveyBasket.API.Services
             if (user is null) //لو طلع فاضي يعني اليوزر مش عندي اساسا     
                 return UserErrors.UserNotFound;
 
-                                                                       //refreshToken
+
+            if (user.IsDisabled)
+                return UserErrors.DisabledUser;
+                                                                     //refreshToken
             var userRefreshToken = user.RefreshTokens.SingleOrDefault(x => x.Token == refreshToken && x.IsActivate);
                                                                     //هتاكد ان التوكن لسه شغال ويكون الريفريش اللي جاي هو اللي عندي
 

@@ -55,7 +55,7 @@ namespace SurveyBasket.API.Code_For_Program
                 .AddScoped<IResultVote, ResultVote>()
                 .AddScoped<IRoleService, RoleService>()
                 .AddScoped<ICacheService, CacheService>()
-                .AddScoped<IUserProfileService, UserProfileService>()
+                .AddScoped<IUserService, UserService>()
                 .AddTransient<IEmailSender, EmailService>()
                 ;
                
@@ -148,7 +148,7 @@ namespace SurveyBasket.API.Code_For_Program
                 // Default Lockout settings.
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 options.Lockout.MaxFailedAccessAttempts = 3;
-                options.Lockout.AllowedForNewUsers = true;
+                options.Lockout.AllowedForNewUsers = true; // لو عملتها ترو كده اي يورز هيسجل هقفل الحاساب بتاعه 
                 options.Password.RequiredLength = 8;
                   // لازم تعمل تاكيد للحساب عشان تقدر تدخل
                 options.SignIn.RequireConfirmedEmail = true;   //عشان ننفذ دول  SignInManager  لازم استخدم انتفير ال  

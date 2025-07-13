@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SurveyBasket.API.Abstractions;
 using SurveyBasket.API.DtoRequestAndResponse;
+using SurveyBasket.API.DtoRequestAndResponse.Users;
 using SurveyBasket.API.Extentions;
 using SurveyBasket.API.Repositories;
 
@@ -13,9 +14,9 @@ namespace SurveyBasket.API.Controllers
     [Authorize]
     public class AccountController : ControllerBase
     {
-        private readonly IUserProfileService _userProfile;
+        private readonly IUserService _userProfile;
 
-        public AccountController(IUserProfileService userProfile)
+        public AccountController(IUserService userProfile)
         {
             _userProfile = userProfile;
         }
