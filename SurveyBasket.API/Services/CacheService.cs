@@ -13,7 +13,7 @@ namespace SurveyBasket.API.Services
         {
             _distributedCache = distributedCache;
             _logger = logger;
-        }
+        } 
         public async Task<T?> GetAsync<T>(string key, CancellationToken cancellationToken = default) where T : class
         {
             _logger.LogInformation("Get Cache With Key: {Key}", key);

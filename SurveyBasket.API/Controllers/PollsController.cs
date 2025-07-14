@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SurveyBasket.API.Abstractions;
 using SurveyBasket.API.Abstractions.Consts;
+using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.Dto.Polls;
 using SurveyBasket.API.Repositories;
 using SurveyBasket.Authentication.Filters;
@@ -14,9 +14,9 @@ namespace SurveyBasket.API.Controllers
     //هيدي اكسبشن CreatedById is required وانت عامل ال  null هيكون ب    UserId لو معملتهاش مش هيستخدم التوكن وبالتالي مش هيقدر يجيب ال 
     public class PollsController : ControllerBase
     {
-        private readonly IPollServices _pollServices;
+        private readonly IPollService _pollServices;
 
-        public PollsController(IPollServices pollServices)
+        public PollsController(IPollService pollServices)
         {
             _pollServices = pollServices;
         }
@@ -35,6 +35,7 @@ namespace SurveyBasket.API.Controllers
             var GetCurrent = await _pollServices.GetCurrentPollAsync(cancellationToken);
             return GetCurrent.IsSuccess ? Ok(GetCurrent.Value) : GetCurrent.ToProblem();
         }
+
         [HttpGet("GetAll")]
         [HasPermission(Permissions.GetPoll)]
         public async Task<IActionResult> GetAllPolls(CancellationToken cancellationToken = default)

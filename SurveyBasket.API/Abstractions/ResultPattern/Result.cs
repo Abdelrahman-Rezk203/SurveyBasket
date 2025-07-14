@@ -1,10 +1,10 @@
-﻿namespace SurveyBasket.API.Abstractions
+﻿namespace SurveyBasket.API.Abstractions.ResultPattern
 {
     public class Result //لو مش هرجع فاليو يعني ترو او فالس بس 
     {
         public Result(bool isSuccess, Error error)
         {
-            if ((IsSuccess && Error != Error.None) || (!IsSuccess && Error == Error.None))
+            if (IsSuccess && Error != Error.None || !IsSuccess && Error == Error.None)
                 throw new InvalidOperationException();
 
             IsSuccess = isSuccess;

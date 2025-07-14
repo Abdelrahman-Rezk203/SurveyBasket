@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.DtoRequestAndResponse;
 using SurveyBasket.API.DtoRequestAndResponse.Users;
 using SurveyBasket.API.Extentions;

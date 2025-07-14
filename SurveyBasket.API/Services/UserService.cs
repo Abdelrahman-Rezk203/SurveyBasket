@@ -1,8 +1,8 @@
 ﻿using Mapster;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SurveyBasket.API.Abstractions;
 using SurveyBasket.API.Abstractions.Consts;
+using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.DtoRequestAndResponse;
 using SurveyBasket.API.DtoRequestAndResponse.Users;
 using SurveyBasket.API.Entities;

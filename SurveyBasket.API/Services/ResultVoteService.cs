@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.DtoRequestAndResponse.Result;
 using SurveyBasket.API.Errors;
 using SurveyBasket.API.Persistance.DbContext;
@@ -8,11 +8,11 @@ using System.Collections.Generic;
 
 namespace SurveyBasket.API.Services
 {
-    public class ResultVote : IResultVote
+    public class ResultVoteService : IResultVote
     {
         private readonly ApplicationDbContext _context;
 
-        public ResultVote(ApplicationDbContext context)
+        public ResultVoteService(ApplicationDbContext context)
         {
             _context = context;
         }

@@ -1,4 +1,4 @@
-﻿using SurveyBasket.API.Abstractions;
+﻿using SurveyBasket.API.Abstractions.ResultPattern;
 using System.Security.Authentication;
 
 namespace SurveyBasket.API.Errors

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using OneOf;
-using SurveyBasket.API.Abstractions;
 using SurveyBasket.API.Authentication;
 using SurveyBasket.API.Dto;
 using SurveyBasket.API.DtoRequestAndResponse;
@@ -16,6 +15,7 @@ using System.Text;
 using Hangfire;
 using SurveyBasket.API.Abstractions.Consts;
 using SurveyBasket.API.Persistance.DbContext;
+using SurveyBasket.API.Abstractions.ResultPattern;
 
 namespace SurveyBasket.API.Services
 {

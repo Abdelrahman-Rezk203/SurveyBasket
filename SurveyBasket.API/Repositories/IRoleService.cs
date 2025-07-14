@@ -1,4 +1,4 @@
-﻿using SurveyBasket.API.Abstractions;
+﻿using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.DtoRequestAndResponse.Roles;
 
 namespace SurveyBasket.API.Repositories

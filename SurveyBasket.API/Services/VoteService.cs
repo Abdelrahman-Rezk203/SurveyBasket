@@ -1,6 +1,6 @@
 ﻿using Mapster;
 using Microsoft.EntityFrameworkCore;
-using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.DtoRequestAndResponse.Vote;
 using SurveyBasket.API.DtoRequestAndResponse.VoteAnswer;
 using SurveyBasket.API.Entities;

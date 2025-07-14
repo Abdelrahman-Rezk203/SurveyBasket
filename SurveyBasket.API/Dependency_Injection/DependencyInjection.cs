@@ -48,11 +48,11 @@ namespace SurveyBasket.API.Code_For_Program
             service.AddBackgroundJobConfig(configuration);
 
             service
-                .AddScoped<IPollServices, PollServices>()
+                .AddScoped<IPollService, PollService>()
                 .AddScoped<IAuth, AuthService>()
                 .AddScoped<IQuestionService, QuestionService>()
                 .AddScoped<IVoteSevice, VoteService>()
-                .AddScoped<IResultVote, ResultVote>()
+                .AddScoped<IResultVote, ResultVoteService>()
                 .AddScoped<IRoleService, RoleService>()
                 .AddScoped<ICacheService, CacheService>()
                 .AddScoped<IUserService, UserService>()

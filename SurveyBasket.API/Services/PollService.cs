@@ -1,7 +1,7 @@
 ﻿using Mapster;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.Dto.Polls;
 using SurveyBasket.API.Errors;
 using SurveyBasket.API.Models;
@@ -11,15 +11,15 @@ using System.Data;
 
 namespace SurveyBasket.API.Services
 {
-    public class PollServices : IPollServices
+    public class PollService : IPollService
     { //static فايدتها انها بتخلي الليست متحاه لك الكائنات لان كل مره بكريت ريف جديد
         private static readonly List<Poll> _poll = new List<Poll>();
       
         private readonly ApplicationDbContext _applicationDbContext;
         private readonly ICacheService _cacheService;
-        private readonly ILogger<PollServices> _logger;
+        private readonly ILogger<PollService> _logger;
 
-        public PollServices(ApplicationDbContext applicationDbContext,ICacheService cacheService,ILogger<PollServices> logger)
+        public PollService(ApplicationDbContext applicationDbContext,ICacheService cacheService,ILogger<PollService> logger)
         {
             _applicationDbContext = applicationDbContext;
             _cacheService = cacheService;

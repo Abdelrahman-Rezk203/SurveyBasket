@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SurveyBasket.API.Abstractions;
 using SurveyBasket.API.Abstractions.Consts;
+using SurveyBasket.API.Abstractions.ResultPattern;
+using SurveyBasket.API.DtoRequestAndResponse.Common;
 using SurveyBasket.API.DtoRequestAndResponse.Question;
 using SurveyBasket.API.Repositories;
 using SurveyBasket.Authentication.Filters;
@@ -29,9 +30,9 @@ namespace SurveyBasket.API.Controllers
 
         [HttpGet("GetAllQuestions/{PollId}")]
         [HasPermission(Permissions.GetQuestion)]
-        public async Task<IActionResult> GatAllQuestion([FromRoute] int PollId , CancellationToken cancellationToken = default)
+        public async Task<IActionResult> GatAllQuestion([FromRoute] int PollId , [FromQuery] RequestFilter requestFilter, CancellationToken cancellationToken = default)
         {
-            var UpdatedQuestion = await _questionService.GetAllQuestionsAsync(PollId ,cancellationToken);
+            var UpdatedQuestion = await _questionService.GetAllQuestionsAsync(PollId, requestFilter, cancellationToken);
             return UpdatedQuestion.IsSuccess ? Ok(UpdatedQuestion.Value) : UpdatedQuestion.ToProblem();
         }
 

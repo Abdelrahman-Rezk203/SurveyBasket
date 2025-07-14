@@ -3,7 +3,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.Authentication;
 using SurveyBasket.API.Dto;
 using SurveyBasket.API.DtoRequestAndResponse;

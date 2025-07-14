@@ -2,13 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Hybrid;
 using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.DtoRequestAndResponse.Answer;
+using SurveyBasket.API.DtoRequestAndResponse.Common;
 using SurveyBasket.API.DtoRequestAndResponse.Question;
 using SurveyBasket.API.Entities;
 using SurveyBasket.API.Errors;
 using SurveyBasket.API.Persistance.DbContext;
 using SurveyBasket.API.Repositories;
-
+using System.Linq.Dynamic.Core;
 namespace SurveyBasket.API.Services
 {
     public class QuestionService : IQuestionService
@@ -87,19 +89,35 @@ namespace SurveyBasket.API.Services
             return Result.Success(CheckQuestionIsFound.Adapt<QuestionWithOutAnswerResponse>());
         }
 
-        public async Task<Result<IEnumerable<QuestionResponse>>> GetAllQuestionsAsync(int PollId , CancellationToken cancellationToken = default)
+        public async Task<Result<PaginationList<QuestionResponse>>> GetAllQuestionsAsync(int PollId , RequestFilter requestFilter, CancellationToken cancellationToken = default)
         {
             var GetQuestioninSpecificPoll = await _applicationDbContext.Polls.FindAsync(PollId, cancellationToken);
             if (GetQuestioninSpecificPoll is null)
-                return Result.Failure<IEnumerable<QuestionResponse>>(PollErrors.PollNotFound);
+                return Result.Failure<PaginationList<QuestionResponse>>(PollErrors.PollNotFound);
 
-               var AllQuestion = await _applicationDbContext.Questions
-                                                        .AsNoTracking()
-                                                        .Where(x=>x.PollID == PollId)
-                                                        .Include(x=>x.Answers)
-                                                        .ToListAsync(cancellationToken);
+            var Query = _applicationDbContext.Questions
+                                             .Where(x => x.PollID == PollId &&
+                                             (string.IsNullOrEmpty(requestFilter.SearchValue) || x.Content.Contains(requestFilter.SearchValue)));
+            
+            if(!string.IsNullOrEmpty(requestFilter.SortColumn))
+            {
+                Query = Query.OrderBy($"{requestFilter.SortColumn} {requestFilter.SortDirection}");
+            }
+                           
+            var result =  Query.Include(x => x.Answers)
+                           //.ProjectToType<QuestionResponse>()
+                           .Select(x => new QuestionResponse(
+                               x.Id,
+                               x.Content,
+                               x.Answers.Select(x => new AnswerResponse(x.Id, x.Content))
+                           ))
+                           .AsNoTracking();
 
-            return Result.Success(AllQuestion.Adapt<IEnumerable<QuestionResponse>>());
+            var AllQuestion = await PaginationList<QuestionResponse>.CreateAsync(result , requestFilter.PageSize , requestFilter.PageNumber ,cancellationToken); 
+              
+
+
+            return Result.Success(AllQuestion);
         }
 
         public async Task<Result<QuestionResponse>> GetQuestionsByIdAsync(int PollId , int Id, CancellationToken cancellationToken = default)

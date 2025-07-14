@@ -1,5 +1,5 @@
 ﻿using OneOf;
-using SurveyBasket.API.Abstractions;
+using SurveyBasket.API.Abstractions.ResultPattern;
 using SurveyBasket.API.Dto;
 using SurveyBasket.API.DtoRequestAndResponse;
 

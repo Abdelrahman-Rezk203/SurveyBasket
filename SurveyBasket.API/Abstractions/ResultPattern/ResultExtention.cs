@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace SurveyBasket.API.Abstractions
+namespace SurveyBasket.API.Abstractions.ResultPattern
 {
     public static class ResultExtention
     {
