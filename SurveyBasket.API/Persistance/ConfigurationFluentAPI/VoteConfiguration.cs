@@ -10,8 +10,8 @@ namespace SurveyBasket.API.Persistance.ConfigurationFluentAPI
         public void Configure(EntityTypeBuilder<Vote> builder)
         {
 
-            builder.HasIndex(x => new { x.PollId, x.UserId }).IsUnique(); // مينفعش اليوزر يصوت علي نفس البول تاني هيه مره واحده 
-            
+            builder.HasIndex(x => new { x.PollId, x.UserId }).IsUnique(); // can not have same user vote in same poll
+
 
 
         }

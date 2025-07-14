@@ -100,8 +100,8 @@ namespace SurveyBasket.API.Services
                                      Roles = r.Select(x => x.Name).ToList()
 
                                  })
-                                 .GroupBy(user => new { user.Id, user.Email, user.FirstName, user.LastName, user.IsDisabled }) //Key في الجروب دول كلهم اسمهم 
-                                 .Select(User => new UserResponse //null هيرجع القيم كلها  select  لو معملتش 
+                                 .GroupBy(user => new { user.Id, user.Email, user.FirstName, user.LastName, user.IsDisabled }) 
+                                 .Select(User => new UserResponse 
                                  (
                                      User.Key.Id,
                                      User.Key.FirstName,
@@ -122,33 +122,7 @@ namespace SurveyBasket.API.Services
             if (UserIsExist is null)
                 return Result.Failure<UserResponse>(UserErrors.UserNotFound);
 
-            ///var GetUser = await (from user in _applicationDbContext.Users
-            ///                     join userRole in _applicationDbContext.UserRoles
-            ///                     on user.Id equals userRole.UserId
-            ///                     join roles in _applicationDbContext.Roles
-            ///                     on userRole.RoleId equals roles.Id into r
-            ///                     where !r.Any(x => x.Name == DefaultRoles.Member)  //لو واحد منهم طلع ميمبر هترجع تروح انا نفيتها عشان عايز اللي مش ميمبر
-            ///                     select new
-            ///                     {
-            ///                         user.Id,
-            ///                         user.Email,
-            ///                         user.FirstName,
-            ///                         user.LastName,
-            ///                         user.IsDisabled,
-            ///                         Roles = r.Select(x => x.Name).ToList()
-            ///                     })
-            ///                     .GroupBy(x => new { x.Id, x.Email, x.FirstName, x.LastName, x.IsDisabled }) // هخليه ميكررش دول 
-            ///                     .Select(x => new UserResponse
-            ///                     (
-            ///                        x.Key.Id,
-            ///                        x.Key.FirstName,
-            ///                        x.Key.LastName,
-            ///                        x.Key.Email,
-            ///                        x.Key.IsDisabled,
-            ///                        x.SelectMany(x => x.Roles).ToList()
-            ///                     ))
-            ///                     .FirstOrDefaultAsync(x=>x.Id == Id , cancellationToken);
-            ///return Result.Success(GetUser.Adapt<UserResponse>());
+            
 
             var UserRoles = await _userManager.GetRolesAsync(UserIsExist);
 
@@ -167,62 +141,7 @@ namespace SurveyBasket.API.Services
 
         public async Task<Result<UserResponse>> AddNewUserAsync(CreateUserRequest createUserRequest, CancellationToken cancellationToken = default)
         {
-            //var EmailIsExist = await _applicationDbContext.Users.FirstOrDefaultAsync(x=>x.Email == createUserRequest.Email , cancellationToken);
-
-            //if(EmailIsExist is not null)
-            //    return Result.Failure<UserResponse>(UserErrors.DublicatedEmail);
-
-            //var AllowedRoles = await _applicationDbContext.Roles
-            //    .Where(x=>!x.IsDeleted).ToListAsync(cancellationToken);
-
-            //if(createUserRequest.Roles.Except(AllowedRoles.Select(x=>x.Name)).Any())
-            //    return Result.Failure<UserResponse>(UserErrors.InvalidRoles);
-
-            ////var PasswordHasher = new PasswordHasher<ApplicationUser>();
-
-            /////var AddUser = new ApplicationUser()
-            /////{
-            /////    FirstName = createUserRequest.FirstName,
-            /////    LastName = createUserRequest.LastName,
-            /////    Email = createUserRequest.Email,
-            /////    PasswordHash = PasswordHasher.HashPassword(EmailIsExist!, createUserRequest.Password),
-            /////
-            /////};
-            /////
-            /////var AddRoles = new ApplicationRole()
-            /////{
-            /////    Name = createUserRequest.Roles
-            /////};
-
-            ////var AddUser = new ApplicationUser()
-            ////{
-            ////    FirstName = createUserRequest.FirstName,
-            ////    LastName = createUserRequest.LastName,
-            ////    Email = createUserRequest.Email,
-            ////    //PasswordHash = PasswordHasher.HashPassword(EmailIsExist!, createUserRequest.Password), // الفانكسش اللي اخدت الباس هتعمله هاش
-            ////    UserName = createUserRequest.UserName,
-            ////    EmailConfirmed = true      // لما اضيفه هخليه متفعل علي طول ول عملتها فالس لازم يروح يفعل الاكونت الاول
-            ////};
-
-            //var AddUser = createUserRequest.Adapt<ApplicationUser>();
-
-            //AddUser.Email = createUserRequest.Email;
-            //AddUser.EmailConfirmed = true;
-            //AddUser.UserName = createUserRequest.UserName;
-
-            //var result = await _userManager.CreateAsync(AddUser,createUserRequest.Password); //تعمل هاش لوحدها
-
-            //if(result.Succeeded)
-            //{
-            //    await _userManager.AddToRolesAsync(AddUser, createUserRequest.Roles);
-
-            //    var response  = (AddUser , createUserRequest.Roles).Adapt<UserResponse>();
-
-            //    return Result.Success(response);
-            //}
-
-            //return Result.Failure<UserResponse>(UserErrors.FailureAddedUser);
-
+            
             var emailIsExists = await _userManager.Users.AnyAsync(x => x.Email == createUserRequest.Email, cancellationToken);
 
             if (emailIsExists)
@@ -273,9 +192,9 @@ namespace SurveyBasket.API.Services
             if (FindUser == null)
                 return Result.Failure(UserErrors.UserNotFound);
 
-             FindUser = updateUserRequest.Adapt(FindUser); //FindUser املي بيها  updateUserRequest خد الداتا اللي في ال 
+             FindUser = updateUserRequest.Adapt(FindUser); 
 
-             FindUser.NormalizedEmail = updateUserRequest.Email.ToUpper(); //لازم اعملها بنفسي Normalization  هنا مش هيفهم ال 
+             FindUser.NormalizedEmail = updateUserRequest.Email.ToUpper();
              FindUser.NormalizedUserName = updateUserRequest.UserName.ToUpper();
 
             //FindUser!.Email = updateUserRequest.Email;
@@ -289,7 +208,7 @@ namespace SurveyBasket.API.Services
             {
                await _applicationDbContext.UserRoles
                     .Where(x=>x.UserId == Id)
-                    .ExecuteDeleteAsync(cancellationToken); // همسح اليوزر بعدين هضيف رول
+                    .ExecuteDeleteAsync(cancellationToken); 
 
                 await _userManager.AddToRolesAsync(FindUser , updateUserRequest.Roles);
 
@@ -318,8 +237,8 @@ namespace SurveyBasket.API.Services
             return Result.Success(UserIsExist);
         }
 
-        public async Task<Result> UnLockUserAsync(string Id, CancellationToken cancellationToken = default) // لو ادمن اتعمله لوك بدل ميفضل مستني الوقت ممكن يكلم الادمن يفتحهوله ف ثانيه
-        {
+        public async Task<Result> UnLockUserAsync(string Id, CancellationToken cancellationToken = default)
+        { 
             var UserIsExist = await _applicationDbContext.Users.FindAsync(Id);
 
             if (UserIsExist is null)

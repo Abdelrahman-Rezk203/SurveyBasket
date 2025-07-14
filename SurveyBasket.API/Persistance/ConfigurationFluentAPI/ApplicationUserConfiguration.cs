@@ -12,13 +12,12 @@ namespace SurveyBasket.API.Persistance.ConfigurationFluentAPI
         public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
             builder
-                    .OwnsMany(x => x.RefreshTokens) //اسمها كذا Many عنده علاقه 
-                    .ToTable("RefreshTokens") //اسم table الجديد
-                    .WithOwner() //applicationUser وهو  many الواحد عنده  
-                    .HasForeignKey("UserId"); //اسم الكلوم
+                    .OwnsMany(x => x.RefreshTokens)
+                    .ToTable("RefreshTokens") //new name of table in database
+                    .WithOwner() 
+                    .HasForeignKey("UserId"); 
 
-            //لكن لو اليوزر بعت داتا اكتر من 50 هيقبلها بس لما يحطها ف الداتا بيز هيدي ايرور لكن هيقبل الريكويست عادي 
-            builder.Property(x => x.FirstName).HasMaxLength(50); //بتكون علي الداتا بيز مينفعش تخزن اكتر من 50 حرف
+            builder.Property(x => x.FirstName).HasMaxLength(50);
 
             builder.Property(x => x.LastName).HasMaxLength(50);
 
@@ -36,7 +35,7 @@ namespace SurveyBasket.API.Persistance.ConfigurationFluentAPI
                 NormalizedUserName = DefaultUsers.AdminEmail.ToUpper(),
                 UserName = DefaultUsers.AdminEmail,
                 EmailConfirmed = true,
-                PasswordHash = "AQAAAAIAAYagAAAAEHjXPM/W5gcdJHv3yTU9N1jFfHSwZD/UUl0NFvyb0YI8k5XxK+bvgZs6oaSztFvwjQ==" //لازم تكون اخر واحده خالص عشان لما يعمل هاض بعدها يجي يضيف حاجه تانيه هيحسب ان ده جدول جديد غير القديم 
+                PasswordHash = "AQAAAAIAAYagAAAAEHjXPM/W5gcdJHv3yTU9N1jFfHSwZD/UUl0NFvyb0YI8k5XxK+bvgZs6oaSztFvwjQ==" 
             });
 
         }

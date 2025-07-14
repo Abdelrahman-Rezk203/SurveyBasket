@@ -12,18 +12,5 @@ namespace SurveyBasket.API.Dto.Polls
         DateOnly EndsAt,
         DateOnly StartsAt
         );
-    //{
-    //    public string Title { get; set; }
-    //    public string Description { get; set; }
-
-    //    //public static implicit operator Poll(PollDto pollDto)
-    //    //{
-    //    //    return new()
-    //    //    {
-    //    //        Description = pollDto.Description,
-    //    //        Title = pollDto.Title,
-                
-    //    //    };
-    //    //}
-    //}
+  
 }

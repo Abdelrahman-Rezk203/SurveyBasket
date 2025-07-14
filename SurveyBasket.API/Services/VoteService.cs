@@ -33,16 +33,15 @@ namespace SurveyBasket.API.Services
             if (UserIsVoted)
                 return Result.Failure(VoteError.DublicatedVote);
 
-            var AvailableVote = await _applicationDbContext.Questions // عشان البول فيه اساله كتير اراي فنا عايز اشوف كل اللي جواها Where  هستخدم ال
-                                    .Where(x => x.IsActive && x.PollID == PollId) //اللي جوه الكويسشن Id هفلتر ال 
-                                    .Select(x => x.Id) //id هعملها سيليكت لل   
+            var AvailableVote = await _applicationDbContext.Questions
+                                    .Where(x => x.IsActive && x.PollID == PollId) 
+                                    .Select(x => x.Id)   
                                     .ToListAsync(cancellationToken);
 
-            //اللي بتاع الكويسشن اللي متاح اني اعمل عليها فوت  id هرجع ال
-            if (!voteRequest.Answers.Select(x => x.QuestionId).All(x => AvailableVote.Contains(x))) //AvailableVote اللي جايه ف الريكويست تكون زي ال  id لازم ال 
-                return Result.Failure(VoteError.InvalidQuestion); // اللي جايه ف الريكويست تكون من ضمن المتاحين اعمل عليهم فوت id لازم ال  
-            // All مش لازم يجاوب علي كل الاسئله
-            //Sequential لازم يجاوب علي كل الاسئله بالترتيب
+            
+            if (!voteRequest.Answers.Select(x => x.QuestionId).All(x => AvailableVote.Contains(x))) 
+                return Result.Failure(VoteError.InvalidQuestion); 
+       
 
             var AnswerIdIsExist = await _applicationDbContext.Answers
                                                              .Where(x=>x.IsActive)
@@ -60,7 +59,7 @@ namespace SurveyBasket.API.Services
             {
                 PollId = PollId,
                 UserId = UserId,
-                VoteAnswers = voteRequest.Answers.Adapt<IEnumerable<VoteAnswer>>().ToList() //entity هحوله لل 
+                VoteAnswers = voteRequest.Answers.Adapt<IEnumerable<VoteAnswer>>().ToList() 
             };
             await _applicationDbContext.AddAsync(vote,cancellationToken);
             await _applicationDbContext.SaveChangesAsync(cancellationToken);

@@ -10,10 +10,9 @@ namespace SurveyBasket.API.Services
 {
     public class EmailService : IEmailSender
     {
-        private readonly MailSettings _MailSettings; //هروح اخد من دي الداتا وهيه هتاخد من الappsettings عشان بنفس الاسم 
+        private readonly MailSettings _MailSettings; 
         private readonly ILogger<EmailService> _logger;
 
-        //احنا بنستخدم الكلاس هنا
         public EmailService(IOptions<MailSettings> MailSettings,ILogger<EmailService> logger)
         {
             _MailSettings = MailSettings.Value;
@@ -24,7 +23,7 @@ namespace SurveyBasket.API.Services
             var massage = new MimeMessage
             {
                 Subject = subject, 
-                Sender = MailboxAddress.Parse(_MailSettings.Mail) // اللي هبعت منه 
+                Sender = MailboxAddress.Parse(_MailSettings.Mail) 
             };
             
             massage.To.Add(MailboxAddress.Parse(email));
@@ -36,7 +35,7 @@ namespace SurveyBasket.API.Services
 
             massage.Body = builder.ToMessageBody();
 
-            using var smtp = new SmtpClient(); //MailKit جوه الباكج
+            using var smtp = new SmtpClient(); //in package MailKit.Net.Smtp
 
             _logger.LogInformation("Sending Email to {email} :", email);
 

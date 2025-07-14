@@ -19,7 +19,7 @@ namespace SurveyBasket.API.Controllers
             this._userService = userService;
         }
         [HttpGet("GetAllUsers")]
-        [HasPermission(Permissions.GetUsers)] //دا اللي يقدر ياكسس الاند ببوينت 
+        [HasPermission(Permissions.GetUsers)] 
         public async Task<IActionResult> GetAllUsers([FromQuery] bool? IncludeDisabled = false, CancellationToken cancellationToken = default)
         {
             var GetAllUsers = await _userService.GetAllUsersAsync(IncludeDisabled, cancellationToken);
@@ -27,7 +27,7 @@ namespace SurveyBasket.API.Controllers
         }
 
         [HttpGet("GetUser/{Id}")]
-        [HasPermission(Permissions.GetUsers)] //دا اللي يقدر ياكسس الاند ببوينت 
+        [HasPermission(Permissions.GetUsers)]
         public async Task<IActionResult> GetUser([FromRoute] string Id, CancellationToken cancellationToken = default)
         {
             var GetUser = await _userService.GetUserAsync(Id, cancellationToken);
@@ -35,7 +35,7 @@ namespace SurveyBasket.API.Controllers
         }
 
         [HttpPost("AddNewUser")]
-        [HasPermission(Permissions.AddUsers)] //دا اللي يقدر ياكسس الاند ببوينت 
+        [HasPermission(Permissions.AddUsers)]
         public async Task<IActionResult> AddNewUser([FromBody] CreateUserRequest createUserRequest, CancellationToken cancellationToken = default)
         {
             var AddUser = await _userService.AddNewUserAsync(createUserRequest, cancellationToken);
@@ -44,7 +44,7 @@ namespace SurveyBasket.API.Controllers
 
 
         [HttpPut("UpdateUser/{Id}")]
-        [HasPermission(Permissions.UpdateUsers)] //دا اللي يقدر ياكسس الاند ببوينت 
+        [HasPermission(Permissions.UpdateUsers)] 
         public async Task<IActionResult> UpdateUser([FromRoute] string Id ,[FromBody] UpdateUserRequest  updateUserRequest, CancellationToken cancellationToken = default)
         {
             var UpdateUser = await _userService.UpdateUserAsync(Id, updateUserRequest, cancellationToken);
@@ -52,7 +52,7 @@ namespace SurveyBasket.API.Controllers
         }
 
         [HttpPut("AddToggleStatusUser/{Id}")]
-        [HasPermission(Permissions.UpdateUsers)] //دا اللي يقدر ياكسس الاند ببوينت 
+        [HasPermission(Permissions.UpdateUsers)] 
         public async Task<IActionResult> AddToggleStatusUser([FromRoute] string Id , CancellationToken cancellationToken = default)
         {
             var ToggleStatus = await _userService.AddToggleStatusUserAsync(Id, cancellationToken);
@@ -60,7 +60,7 @@ namespace SurveyBasket.API.Controllers
         }
 
         [HttpPut("UnLockUser/{Id}")]
-        [HasPermission(Permissions.UpdateUsers)] //دا اللي يقدر ياكسس الاند ببوينت 
+        [HasPermission(Permissions.UpdateUsers)] 
         public async Task<IActionResult> UnLockUser([FromRoute] string Id , CancellationToken cancellationToken = default)
         {
             var Unlock = await _userService.UnLockUserAsync(Id, cancellationToken);

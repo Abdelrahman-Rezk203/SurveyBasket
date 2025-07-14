@@ -10,11 +10,11 @@ using System.Security.Claims;
 
 namespace SurveyBasket.API.Persistance.DbContext
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser,ApplicationRole,string> //هاتلي من الكلاس ده عشان هو فيه اتنين لسه عاملهم
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser,ApplicationRole,string>
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        //IdentityDbcontext هبعته للاب بتاع ال   
+        
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,IHttpContextAccessor httpContextAccessor):base(options)
         {
             _httpContextAccessor = httpContextAccessor;
@@ -28,7 +28,7 @@ namespace SurveyBasket.API.Persistance.DbContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.ApplyConfiguration(new PollConfiguration()); //Fluent apiهيه اللي هتشغل اال
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());//IEntityTypeCOnfiguration هينفذ اي كلاسبيعمل امبليمنت ل 
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());//IEntityTypeCOnfiguration هينفذ اي كلاس بيعمل امبليمنت ل 
            
             var CascadeFk = modelBuilder.Model.GetEntityTypes()      //loop on all entity
                                               .SelectMany(t => t.GetForeignKeys()) //select all fk for this entity

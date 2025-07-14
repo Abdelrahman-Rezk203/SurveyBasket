@@ -30,30 +30,23 @@ namespace SurveyBasket.API.Services
 
         private const string _CachePrefix = "availableQuestion";
 
-        //عشان اشوف الاول هو موجود ولا لا مينفعش اضيف غير لما يكون موجود عشان اربط العلاقات ببعض  PollId اللويجك هيتغير لان الجدول بتاع الاسئله مرتبط مع ال البول يعني لازم تبعتلي 
         public async Task<Result<QuestionResponse>> AddQuestionAsync(int PollId, QuestionRequest questionRequest, CancellationToken cancellationToken = default)
         {
             var PollIsFound = await _applicationDbContext.Polls.FindAsync(PollId,cancellationToken);
             if (PollIsFound is null)
                 return Result.Failure<QuestionResponse>(PollErrors.PollIdNotFound);
             
-            ///var QuestionEntity = new Question()  // دا هيبقي غلط عشان انا رايبط قبل متعمل تحويل تحت يعني لما يحول هيشيله تاني 
-            ///{
-            ///   PollID = PollIsFound.Id    //Connect Qusetion With Poll by FK
-            ///};
             
             if (string.IsNullOrWhiteSpace(questionRequest.Content))
                 return Result.Failure<QuestionResponse>(QuestionError.ContentNotEmpty);
 
             var QuestionDublicated = await _applicationDbContext.Questions.AnyAsync(x => x.Content == questionRequest.Content && x.PollID == PollId);
-            if (QuestionDublicated)                                                                                         //x.PollID == PollId  عشان اضيف ف استطلاع راي تاني عادي مينفعش امنع خالص
+            if (QuestionDublicated)                                                                                       
                 return Result.Failure<QuestionResponse>(QuestionError.ContentDublicated);
 
             var ConvertToQuestion = questionRequest.Adapt<Question>(); 
 
-              ConvertToQuestion.PollID = PollId; //Connect Qusetion With Poll by FK
-
-            // MappingConfig فيه جزء مهم خاص بالانسر في 
+              ConvertToQuestion.PollID = PollId; 
 
             await _applicationDbContext.AddAsync(ConvertToQuestion, cancellationToken);
             await _applicationDbContext.SaveChangesAsync(cancellationToken);
@@ -71,7 +64,7 @@ namespace SurveyBasket.API.Services
             var CheckPollIsFound = await _applicationDbContext.Polls.FindAsync(PollId , cancellationToken);
             if (CheckPollIsFound is null)
                 return Result.Failure<QuestionWithOutAnswerResponse>(PollErrors.PollIdNotFound);
-                                                                                            //انا بدور ف كل جدول الكويسشن فلازم اقوله متعدلش غير علي اللي موجود جوه البول دي فقط
+
             var CheckQuestionIsFound = await _applicationDbContext.Questions.FirstOrDefaultAsync(x=>x.Id == Id && x.PollID == CheckPollIsFound.Id , cancellationToken);
             if (CheckQuestionIsFound is null )
                 return Result.Failure<QuestionWithOutAnswerResponse>(QuestionError.QuestionNotFound);
@@ -130,63 +123,27 @@ namespace SurveyBasket.API.Services
             if (!CheckQuestionExist )
                 return Result.Failure<QuestionResponse>(QuestionError.QuestionNotFound);
 
-            var GetQuestion = await _applicationDbContext.Questions.AsNoTracking()        //ممكن البول موجوده لكن مفهاش الكويسشن ده 
-                                                                   .Where(x => x.PollID == PollId && x.Id == Id) //كذا  Id عشان اتاكد ان البول موجوده بالفعل وكمان فيها كويسشن عنده 
+            var GetQuestion = await _applicationDbContext.Questions.AsNoTracking()        
+                                                                   .Where(x => x.PollID == PollId && x.Id == Id) 
                                                                    .Include(x => x.Answers)
                                                                    .FirstOrDefaultAsync(cancellationToken);
-                                                                 //.ToListAsync(cancellationToken); //List<QuestionResponse> مش هحول الي ليست عشان هو واحد فقط بس لو حولت لازم ارجع          
             
             return Result.Success(GetQuestion.Adapt<QuestionResponse>());
         }
 
-        //public async Task<Result> UpdateQuestion(int PollId, int Id, QuestionRequest questionRequest , CancellationToken cancellationToken = default)
-        //{
-        //    var CheckPollIsFound = await _applicationDbContext.Polls.AnyAsync(x => x.Id == PollId, cancellationToken);
-        //    if (!CheckPollIsFound)
-        //        return Result.Failure(PollErrors.PollIdNotFound);
-        //                                                                   //عشان يعرف ان فيه اجابات مرتبطه مع السوال فلما يمسح يروح يمسحها
-        //    var CheckQuestionIsFound = await _applicationDbContext.Questions.Include(x=>x.Answers).FirstOrDefaultAsync(x=>x.Id == Id && x.PollID == PollId , cancellationToken);
-        //    if (CheckQuestionIsFound is null)
-        //        return Result.Failure(QuestionError.QuestionNotFound);
-        //                                                       //عشان ميقارنش نفسه بنفسه اللي هو بنعدل عليه حاليا 
-        //    var IsDublicated = await _applicationDbContext.Questions.AnyAsync(x=>x.Id != Id && x.PollID == PollId && x.Content == questionRequest.Content,cancellationToken);
-        //    if (IsDublicated)                                               //مش اللي انا واقف عنده 
-        //        return Result.Failure(QuestionError.ContentDublicated);
-
-
-        //    CheckQuestionIsFound.Content = questionRequest.Content;
-
-        //    _applicationDbContext.Answers.RemoveRange(CheckQuestionIsFound.Answers); // delete old Answers 
-        //                                                                            //الكونتنت اللي ف الانسر هو الاجابات 
-        //    //CheckQuestionIsFound.Answers = questionRequest.Answers.Select(x => new Answer { Content = x}).ToList();
-        //    foreach (var item in questionRequest.Answers)
-        //    {
-        //        var answer = new Answer
-        //        {
-        //            Content =  item,
-        //            QuestionId = CheckQuestionIsFound.Id
-        //        };
-        //        await _applicationDbContext.Answers.AddAsync(answer);
-        //    }
-
-        //    await _applicationDbContext.SaveChangesAsync(cancellationToken);
-        //    return Result.Success();
-
-
-        //}
 
         public async Task<Result> UpdateQuestion(int PollId, int Id, QuestionRequest request, CancellationToken cancellationToken = default)
         {
             var CheckPollIsFound = await _applicationDbContext.Polls.AnyAsync(x => x.Id == PollId, cancellationToken);
             if (!CheckPollIsFound)
                 return Result.Failure(PollErrors.PollIdNotFound);
-                                                                                   //عشان يعرف ان فيه اجابات مرتبطه مع السوال فلما يمسح يروح يمسحها
+                                                                                  
             var question = await _applicationDbContext.Questions.Include(x => x.Answers).FirstOrDefaultAsync(x => x.Id == Id && x.PollID == PollId, cancellationToken);
             if (question is null)
                 return Result.Failure(QuestionError.QuestionNotFound);
-                                                              //عشان ميقارنش نفسه بنفسه اللي هو بنعدل عليه حاليا 
+                                                            
             var IsDublicated = await _applicationDbContext.Questions.AnyAsync(x => x.Id != Id && x.PollID == PollId && x.Content == request.Content, cancellationToken);
-            if (IsDublicated)                                               //مش اللي انا واقف عنده 
+            if (IsDublicated)                                              
                 return Result.Failure(QuestionError.ContentDublicated);
 
 
@@ -201,10 +158,9 @@ namespace SurveyBasket.API.Services
                 question.Answers.Add(new Answer { Content = x });
             });
 
-            question.Answers.ToList().ForEach(x => // هلف علي كل الداتا بيز عشان اشوف مين هيتاكتف ومين لا
+            question.Answers.ToList().ForEach(x => 
             {
                 x.IsActive = request.Answers.Contains(x.Content);
-                //هل الانسر اللي جايه موجوده ف الداتا بيز ولا لا لو رجع ترو هييفعلها لو لا هيحط فالس 
             });
             await _hybridCache.RemoveAsync($"{_CachePrefix}-{PollId}",cancellationToken);
 
@@ -213,7 +169,7 @@ namespace SurveyBasket.API.Services
         }
 
         // If the user has already voted for this specific poll,
-        // then don't return the questions because they are not allowed to vote twice. //طاملا عملت فوت يبقي معندش اي اسئله متاحه في نفس البول اللي عملت فوت عليها 
+        // then don't return the questions because they are not allowed to vote twice. 
         public async Task<Result<IEnumerable<QuestionResponse>>> GetAvailableQuestionToVoteAsync(int PollId, string UserId, CancellationToken cancellationToken = default)
         {
             var CheckPollIsFound = await _applicationDbContext.Polls.AnyAsync(x=>x.Id == PollId && x.IsPublisher &&
@@ -227,7 +183,7 @@ namespace SurveyBasket.API.Services
                 return Result.Failure<IEnumerable<QuestionResponse>>(VoteError.DublicatedVote);
 
 
-            var cacheKey = $"{_CachePrefix}-{PollId}"; //id وعندها نفس ال  availableQuestion  كون اسمها  
+            var cacheKey = $"{_CachePrefix}-{PollId}"; 
 
             var CacheQuestion = await _hybridCache.GetOrCreateAsync<IEnumerable<QuestionResponse>>(
                 cacheKey,
@@ -242,7 +198,7 @@ namespace SurveyBasket.API.Services
                                                                        q.Id,
                                                                        q.Content,
                                                                        q.Answers.Where(a => a.IsActive).Select(a => new AnswerResponse(a.Id, a.Content)).ToArray()
-                                                                       )//هحددد الاجابات اللي اكتف 
+                                                                       )
                                                                    ).AsNoTracking()
                                                                    .ToListAsync(cancellationToken);
 

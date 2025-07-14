@@ -12,12 +12,12 @@ namespace SurveyBasket.API.FluentValidations
 {
     public class VoteRequestValidation : AbstractValidator<VoteRequest>
     {
-        public VoteRequestValidation()//دا الكلاس الاساسي هو اللي بيتنفذ اوتو لكنك لو فيه فاليدين علي حاجه جواه لازم اعرفهاله هنا
+        public VoteRequestValidation()
         {
             RuleFor(x => x.Answers)
                 .NotEmpty();
 
-            RuleForEach(x => x.Answers).SetInheritanceValidator(v => v.Add(new VoteAnswerRequestValidation()));//عشان ينفذ الفاليديشن اللي علي الحاجات اللي جوه 
+            RuleForEach(x => x.Answers).SetInheritanceValidator(v => v.Add(new VoteAnswerRequestValidation()));
         }
     }
 }

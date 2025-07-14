@@ -9,7 +9,7 @@
 
         public DateTime? UpdatedOn { get; set; }
 
-        public ApplicationUser? UpdatedBy { get; set; }  //Navigation Property         UpdatedById <= هيكريت فورين كي لوحده اسمه 
+        public ApplicationUser? UpdatedBy { get; set; }  //Navigation Property         UpdatedById <= created Fk
 
         public ApplicationUser CreatedBy { get; set; } = default!; //Navigation Property  
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "koEKA0DG5lI=",
+  "dgSpecHash": "uis6Qa1+43g=",
   "success": true,
-  "projectFilePath": "E:\\Route ASP.net\\الهلال_كورسFull_Code_(Project)\\الهلالي كورس\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj",
+  "projectFilePath": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Abdelrahman22\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Abdelrahman22\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

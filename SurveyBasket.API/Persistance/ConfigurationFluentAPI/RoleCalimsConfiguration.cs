@@ -10,21 +10,21 @@ namespace SurveyBasket.API.Persistance.ConfigurationFluentAPI
         public void Configure(EntityTypeBuilder<IdentityRoleClaim<string>> builder)
         {
             var permissions = Permissions.GetAllPermissions();
-            var adminClaims = new List<IdentityRoleClaim<string>>(); // هضيف فيها 
+            var adminClaims = new List<IdentityRoleClaim<string>>();
 
 
             for(int i = 0; i < permissions.Count; i++)
             {
                 adminClaims.Add(new IdentityRoleClaim<string>
                 {
-                    Id = i + 1, // هديها ايدي عشان تبقي unique
+                    Id = i + 1, 
                     ClaimType = Permissions.Type,
-                    ClaimValue = permissions[i], // هضيف ال value بتاعتها
+                    ClaimValue = permissions[i], 
                     RoleId = DefaultRoles.AdminRoleId
                 });
             }
 
-            builder.HasData(adminClaims); // هضيفها ف الداتا بيز
+            builder.HasData(adminClaims); 
         }
     }
 }

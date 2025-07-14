@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Route ASP.net\\الهلال_كورسFull_Code_(Project)\\الهلالي كورس\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj": {}
+    "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj": {}
   },
   "projects": {
-    "E:\\Route ASP.net\\الهلال_كورسFull_Code_(Project)\\الهلالي كورس\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj": {
+    "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Route ASP.net\\الهلال_كورسFull_Code_(Project)\\الهلالي كورس\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj",
+        "projectUniqueName": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj",
         "projectName": "SurveyBasket.API",
-        "projectPath": "E:\\Route ASP.net\\الهلال_كورسFull_Code_(Project)\\الهلالي كورس\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj",
+        "projectPath": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\SurveyBasket.API.csproj",
         "packagesPath": "C:\\Users\\Abdelrahman22\\.nuget\\packages\\",
-        "outputPath": "E:\\Route ASP.net\\الهلال_كورسFull_Code_(Project)\\الهلالي كورس\\SurveyBasket\\SurveyBasket.API\\obj\\",
+        "outputPath": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

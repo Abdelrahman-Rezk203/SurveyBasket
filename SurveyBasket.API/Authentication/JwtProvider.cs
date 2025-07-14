@@ -31,7 +31,7 @@ namespace SurveyBasket.API.Authentication
 
                 ];
 
-            var symmtricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOption.Value.Key)); //اللي هشفل بيه التوكن 
+            var symmtricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOption.Value.Key)); //if you want to use a different key, you can change it in the appsettings.json file
 
             var signingCredintial = new SigningCredentials(symmtricSecurityKey, SecurityAlgorithms.HmacSha256);
 
@@ -48,13 +48,13 @@ namespace SurveyBasket.API.Authentication
                 );
 
             return (token: new JwtSecurityTokenHandler().WriteToken(token),expireIn: expireIn );
-                             //JwtSecurityTokenHandler => مسؤول عن كريتت التوكن وفك التوكن 
+                             
         }
 
         public string? ValidateToken(string token)
         {
             var TokenHandler = new JwtSecurityTokenHandler(); // encoding or decoding for token 
-            var symmtricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOption.Value.Key)); //اللي هشفل بيه التوكن 
+            var symmtricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOption.Value.Key)); 
             //key fot encode or decode
             try
             {
@@ -62,11 +62,11 @@ namespace SurveyBasket.API.Authentication
 
                 TokenHandler.ValidateToken(token, new TokenValidationParameters
                 {
-                    IssuerSigningKey = symmtricSecurityKey, //هقارن التوكن بعد فك التشفير باللي قبل الشتفير
-                    ValidateIssuerSigningKey = true, //key لازم يكون معمول بنفس ال 
+                    IssuerSigningKey = symmtricSecurityKey, 
+                    ValidateIssuerSigningKey = true,  
                     ValidateIssuer = false, 
                     ValidateAudience = false,
-                    ClockSkew = TimeSpan.Zero // يعني لو التوكن منتهي حتى بثانية  يعتبر غير صالح .
+                    ClockSkew = TimeSpan.Zero 
 
 
                 }, out SecurityToken validatedToken);

@@ -9,7 +9,7 @@ namespace SurveyBasket.API.Abstractions.ResultPattern
             if (result.IsSuccess)
                 throw new InvalidOperationException("Can't convert success result to a problem");
 
-            var problem = Results.Problem(statusCode: result.Error.StatusCode); // get url for RFC     لينك هيوديك للاستيتاس كود  
+            var problem = Results.Problem(statusCode: result.Error.StatusCode);  
             var problemDetails = problem.GetType().GetProperty(nameof(ProblemDetails))!.GetValue(problem) as ProblemDetails; // reflection
 
             problemDetails!.Extensions = new Dictionary<string, object?>

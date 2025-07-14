@@ -1,4 +1,5 @@
-﻿using Mapster;
+﻿using Hangfire;
+using Mapster;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SurveyBasket.API.Abstractions.ResultPattern;
@@ -12,22 +13,23 @@ using System.Data;
 namespace SurveyBasket.API.Services
 {
     public class PollService : IPollService
-    { //static فايدتها انها بتخلي الليست متحاه لك الكائنات لان كل مره بكريت ريف جديد
+    { 
         private static readonly List<Poll> _poll = new List<Poll>();
       
         private readonly ApplicationDbContext _applicationDbContext;
         private readonly ICacheService _cacheService;
         private readonly ILogger<PollService> _logger;
+        private readonly INotificationService _notificationService;
 
-        public PollService(ApplicationDbContext applicationDbContext,ICacheService cacheService,ILogger<PollService> logger)
+        public PollService(ApplicationDbContext applicationDbContext,ICacheService cacheService,ILogger<PollService> logger, INotificationService notificationService)
         {
             _applicationDbContext = applicationDbContext;
             _cacheService = cacheService;
             _logger = logger;
+            _notificationService = notificationService;
         }
         private const string _CachePrefix = "avalilablePolls";
 
-         // اللي متاحه دوقت عشان ممكن وقتها يكون انتهي او انا عملتها فالس لغيتها 
         public async Task<Result<IEnumerable<PollResponse>>> GetCurrentPollAsync(CancellationToken cancellationToken= default)
         {
             var GetCurrent = await _applicationDbContext
@@ -45,22 +47,10 @@ namespace SurveyBasket.API.Services
             if (pollDto.EndsAt <= pollDto.StartsAt)
                 return Result.Failure<PollResponse>(PollErrors.CheckonDate);
 
-            ///var newId = _applicationDbContext.Polls.Any() ? _applicationDbContext.Polls.Max(x => x.Id) + 1 : 1;
-            ///var Poll = new Poll() //هعملها بال Implicit mapping 
-            ///{
-            ///    //Id = newId,
-            ///    Description = pollDto.Description,
-            ///    Title = pollDto.Title,
-            ///    StartsAt = pollDto.StartsAt,
-            ///    EndsAt = pollDto.EndsAt
-            ///};
+           
 
-            //var config = new TypeAdapterConfig();
-            //config.NewConfig<PollDto, Poll>().Map(x => x.Description, Src => Src.Description);
-            //هكتبهم في globalClass
-
-            var Mapster = pollDto.Adapt<Poll>(); // عشان اعرف اخزنها ف الداتا بيز 
-            await _applicationDbContext.Polls.AddAsync(Mapster); //الي الموديل dto  لازم احول من ال
+            var Mapster = pollDto.Adapt<Poll>();
+            await _applicationDbContext.Polls.AddAsync(Mapster); 
             await _applicationDbContext.SaveChangesAsync(cancellationToken);
             await _cacheService.RemoveAsync(_CachePrefix, cancellationToken);
 
@@ -101,20 +91,19 @@ namespace SurveyBasket.API.Services
             if (pollDto is null)
                 return Result.Failure<PollResponse>(PollErrors.PollNotFound);
             return Result.Success(pollDto.Adapt<PollResponse>());
-            //هيروح للكنترولر يتشك مع نفسه بقي
         }
 
         public async Task<Result> UpdatePollAsync(int Id, PollDtoRequest pollDto, CancellationToken cancellationToken = default)
         {
             var find = await _applicationDbContext.Polls.FindAsync(Id, cancellationToken);
             if (find is null)
-                return Result.Failure(PollErrors.PollNotFound); //مش هستخدم الGenaric لاني مش هرجع حاجه 
+                return Result.Failure(PollErrors.PollNotFound); 
 
             if (string.IsNullOrWhiteSpace(pollDto.Title) || string.IsNullOrWhiteSpace(pollDto.Description))
                 return Result.Failure(PollErrors.NotEmpty);
 
 
-                                                        // مختلف  id  هشوف لو التايتل متكرر يبقي ترو && ميكونش متكرر مع 
+                                                       
             var IsDublicate = await _applicationDbContext.Polls.FirstOrDefaultAsync(x => x.Title == pollDto.Title && x.Id != Id);
             if (IsDublicate is not null)
                 return Result.Failure(PollErrors.DublicatedPoll);
@@ -153,6 +142,10 @@ namespace SurveyBasket.API.Services
             find.IsPublisher = !find.IsPublisher;
 
             await _applicationDbContext.SaveChangesAsync(cancellationToken);
+
+            if (find.IsPublisher && find.StartsAt == DateOnly.FromDateTime(DateTime.UtcNow))
+                BackgroundJob.Enqueue(() => _notificationService.SendNewPollsNotification(find.Id));
+
             return Result.Success();
         }
 

@@ -16,19 +16,5 @@ namespace SurveyBasket.API.Models
         public ICollection<Question> Questions { get; set; } = [];
         public ICollection<Vote> votes { get; set; } = [];
 
-
-
-
-        //public static implicit operator PollDto(Poll poll)//وهحول تاني العكس PollDto هروح عند ال 
-        //{
-        //    return new()
-        //    {
-        //        Description = poll.Description,
-        //        Title = poll.Title,
-
-        //    };
-        //}
-
-
     }
 }

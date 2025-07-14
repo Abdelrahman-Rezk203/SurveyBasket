@@ -1,6 +1,6 @@
 ﻿namespace SurveyBasket.API.Abstractions.ResultPattern
 {
-    public class Result //لو مش هرجع فاليو يعني ترو او فالس بس 
+    public class Result 
     {
         public Result(bool isSuccess, Error error)
         {
@@ -25,7 +25,7 @@
 
     }
 
-    public class Result<TValue> : Result //لو احتاجت ارجع فاليو
+    public class Result<TValue> : Result  // if function return void , use Result instead of Result<TValue>
     {
         public readonly TValue? _value;
         public Result(TValue? value, bool isSuccess, Error error) : base(isSuccess, error)

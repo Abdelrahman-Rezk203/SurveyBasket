@@ -10,7 +10,7 @@ namespace SurveyBasket.API.Persistance.ConfigurationFluentAPI
         public void Configure(EntityTypeBuilder<Question> builder)
         {
             
-            builder.HasIndex(x => new {x.PollID , x.Content}).IsUnique(); //مش هكرر نفس السوال جوه نفس البول 
+            builder.HasIndex(x => new {x.PollID , x.Content}).IsUnique(); //can not have same question in same poll
             builder.Property(x => x.Content).HasMaxLength(1000);
 
            

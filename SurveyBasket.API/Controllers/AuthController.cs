@@ -83,7 +83,7 @@ namespace SurveyBasket.API.Controllers
         {
             var User = await _auth.RegisterAsync(request, cancellationToken);
             return User.Match(
-                  x => Ok(),  //OneOf عشان بتستخدم ال 
+                  x => Ok(),  // because OneOf is used in the return type
                   errorFuntionRegister
                );
 
@@ -146,21 +146,5 @@ namespace SurveyBasket.API.Controllers
         }
 
 
-
-
-
-
-        /// [HttpGet("")]
-        /// public  IActionResult test()
-        /// {
-        ///     var configuration = new
-        ///     {
-        ///         MyKey = _configuration["MyKey"],
-        ///         Enviornment = _configuration["ASPNETCORE_ENVIRONMENT"],
-        ///         OneDrive = _configuration["OneDrive"] //On My PC
-        ///     };
-        ///
-        ///     return Ok(configuration);
-        /// }
     }
 }

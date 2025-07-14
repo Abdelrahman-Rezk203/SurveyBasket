@@ -17,8 +17,6 @@ namespace SurveyBasket.API.Persistance.ConfigurationFluentAPI
                          NormalizedName = DefaultRoles.Admin.ToUpper(),
                          ConcurrencyStamp = DefaultRoles.AdminRoleConcurrencyStamp
 
-                         //IsDefault = false, // ممكن كتكتبهمش عشان ال default values is false
-                         //IsDeleted = false
                      },
                     new ApplicationRole
                     {

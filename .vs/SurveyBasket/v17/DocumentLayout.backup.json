@@ -1,41 +1,62 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\",
+  "WorkspaceRootPath": "E:\\Projects_For_Github\\SurveyBasket\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Abdelrahman22\\AppData\\Roaming\\Microsoft\\UserSecrets\\4c8080ef-8981-49a5-8a89-efa72788dcb9\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\services\\userprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\userprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\repositories\\iauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\repositories\\iauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\fluentvalidations\\changepasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\fluentvalidations\\changepasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\fluentvalidations\\resetpasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\fluentvalidations\\resetpasswordrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\dtorequestandresponse\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\dtorequestandresponse\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\route asp.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633full_code_(project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\surveybasket\\surveybasket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\templates\\pollnotification.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\templates\\pollnotification.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\settings\\mailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\settings\\mailsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\voteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\voteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\resultvoteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\resultvoteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\questionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\questionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\pollservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\pollservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\cacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\cacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|e:\\projects_for_github\\surveybasket\\surveybasket.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AB6F6E-E748-483C-93D0-0A38C903B38B}|SurveyBasket.API\\SurveyBasket.API.csproj|solutionrelative:surveybasket.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -57,110 +78,185 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserProfileService.cs",
-              "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Services\\UserProfileService.cs",
-              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\UserProfileService.cs",
-              "ToolTip": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Services\\UserProfileService.cs",
-              "RelativeToolTip": "SurveyBasket.API\\Services\\UserProfileService.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwEIAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Program.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Program.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Program.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Program.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEYAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T11:57:06.555Z"
+              "WhenOpened": "2025-07-14T15:35:47.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\appsettings.json",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\appsettings.json",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\appsettings.json",
+              "RelativeToolTip": "SurveyBasket.API\\appsettings.json",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-14T15:35:40.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PollNotification.html",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Templates\\PollNotification.html",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Templates\\PollNotification.html",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Templates\\PollNotification.html",
+              "RelativeToolTip": "SurveyBasket.API\\Templates\\PollNotification.html",
+              "ViewState": "AgIAALUBAAAAAAAAAAAAwCQCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-07-14T15:35:28.8Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IAuth.cs",
-              "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Repositories\\IAuth.cs",
-              "RelativeDocumentMoniker": "SurveyBasket.API\\Repositories\\IAuth.cs",
-              "ToolTip": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Repositories\\IAuth.cs",
-              "RelativeToolTip": "SurveyBasket.API\\Repositories\\IAuth.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABYAAAAAAAAAA==",
+              "Title": "MailSettings.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Settings\\MailSettings.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Settings\\MailSettings.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Settings\\MailSettings.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Settings\\MailSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T10:56:11.707Z"
+              "WhenOpened": "2025-07-14T15:34:21.151Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ChangePasswordRequestValidator.cs",
-              "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\FluentValidations\\ChangePasswordRequestValidator.cs",
-              "RelativeDocumentMoniker": "SurveyBasket.API\\FluentValidations\\ChangePasswordRequestValidator.cs",
-              "ToolTip": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\FluentValidations\\ChangePasswordRequestValidator.cs",
-              "RelativeToolTip": "SurveyBasket.API\\FluentValidations\\ChangePasswordRequestValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Title": "VoteService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\VoteService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\VoteService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\VoteService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\VoteService.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAcwD0AAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T10:42:11.907Z"
+              "WhenOpened": "2025-07-14T15:33:55.081Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ResetPasswordRequestValidator.cs",
-              "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\FluentValidations\\ResetPasswordRequestValidator.cs",
-              "RelativeDocumentMoniker": "SurveyBasket.API\\FluentValidations\\ResetPasswordRequestValidator.cs",
-              "ToolTip": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\FluentValidations\\ResetPasswordRequestValidator.cs",
-              "RelativeToolTip": "SurveyBasket.API\\FluentValidations\\ResetPasswordRequestValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAACCAAAAAAAAAA==",
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\UserService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\UserService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\UserService.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAAwNIAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T10:40:51.808Z"
+              "WhenOpened": "2025-07-14T15:32:55.705Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ResetPasswordRequest.cs",
-              "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\DtoRequestAndResponse\\ResetPasswordRequest.cs",
-              "RelativeDocumentMoniker": "SurveyBasket.API\\DtoRequestAndResponse\\ResetPasswordRequest.cs",
-              "ToolTip": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\DtoRequestAndResponse\\ResetPasswordRequest.cs",
-              "RelativeToolTip": "SurveyBasket.API\\DtoRequestAndResponse\\ResetPasswordRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
+              "Title": "RoleService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\RoleService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\RoleService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\RoleService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\RoleService.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAowJEAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T10:39:57.177Z"
+              "WhenOpened": "2025-07-14T15:32:42.542Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "SurveyBasket.API\\Controllers\\AuthController.cs",
-              "ToolTip": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "SurveyBasket.API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHkAAAAJAAAAAAAAAA==",
+              "Title": "ResultVoteService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\ResultVoteService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\ResultVoteService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\ResultVoteService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\ResultVoteService.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T21:32:57.577Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\AuthService.cs",
-              "ToolTip": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\Services\\AuthService.cs",
-              "RelativeToolTip": "SurveyBasket.API\\Services\\AuthService.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwA4AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T21:12:26.104Z",
+              "WhenOpened": "2025-07-14T15:32:37.225Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\appsettings.json",
-              "RelativeDocumentMoniker": "SurveyBasket.API\\appsettings.json",
-              "ToolTip": "E:\\Route ASP.net\\\u0627\u0644\u0647\u0644\u0627\u0644_\u0643\u0648\u0631\u0633Full_Code_(Project)\\\u0627\u0644\u0647\u0644\u0627\u0644\u064A \u0643\u0648\u0631\u0633\\SurveyBasket\\SurveyBasket.API\\appsettings.json",
-              "RelativeToolTip": "SurveyBasket.API\\appsettings.json",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAACwAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-30T21:10:16.417Z"
+              "Title": "QuestionService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\QuestionService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\QuestionService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\QuestionService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\QuestionService.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAqwMgAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T15:30:37.41Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "secrets.json",
-              "DocumentMoniker": "C:\\Users\\Abdelrahman22\\AppData\\Roaming\\Microsoft\\UserSecrets\\4c8080ef-8981-49a5-8a89-efa72788dcb9\\secrets.json",
-              "ToolTip": "C:\\Users\\Abdelrahman22\\AppData\\Roaming\\Microsoft\\UserSecrets\\4c8080ef-8981-49a5-8a89-efa72788dcb9\\secrets.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-30T21:08:40.785Z"
+              "DocumentIndex": 9,
+              "Title": "PollService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\PollService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\PollService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\PollService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\PollService.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAADwv2kAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T15:30:02.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\NotificationService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\NotificationService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\NotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T15:30:00.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CacheService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\CacheService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\CacheService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\CacheService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\CacheService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T15:28:51.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\EmailService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\EmailService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\EmailService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T15:28:50.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "SurveyBasket.API\\Services\\AuthService.cs",
+              "ToolTip": "E:\\Projects_For_Github\\SurveyBasket\\SurveyBasket.API\\Services\\AuthService.cs",
+              "RelativeToolTip": "SurveyBasket.API\\Services\\AuthService.cs",
+              "ViewState": "AgIAAE0BAAAAAAAAAAAAwFUBAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T15:21:12.018Z",
+              "EditorCaption": ""
             }
           ]
         }

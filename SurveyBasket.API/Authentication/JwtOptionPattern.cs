@@ -12,7 +12,7 @@ namespace SurveyBasket.API.Authentication
         [Required]
         public string Audience { get; init; } = string.Empty;
         [Required]
-        [Range(1,int.MaxValue ,ErrorMessage = "Invalid Expiry Time")] //لو بره الفتره دي هيدي ايرور مش هيرن 
+        [Range(1,int.MaxValue ,ErrorMessage = "Invalid Expiry Time")] // if period is less than 1 minute, it will throw an error
         public int ExpiryMinuties { get; init; } 
 
     } 

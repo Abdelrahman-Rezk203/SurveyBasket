@@ -98,14 +98,14 @@ namespace SurveyBasket.API.Services
 
         public async Task<OneOf<AuthResponse,Error>> GetRefreshTokenAsync(string token, string refreshToken, CancellationToken cancellationToken = default)
         {
-            var userId = _jwtProvider.ValidateToken(token); //هتفك تشفير التوكن وتقارنه باللي عندي اللي كنت مكريته لو طلع تمم يبقي هيرجع ان في يوزر عايز يكريت واحد
+            var userId = _jwtProvider.ValidateToken(token); // decode the token and check if it matches the one I created, if it matches, it will return the userId, otherwise null
 
-            if (userId is null) //يعني التوكن غلط 
+            if (userId is null) //invalid token
                 return UserErrors.InvalidToken;
 
-            var user = await _userManager.FindByIdAsync(userId); //بتاع اليوزر ده  Id هروح اجيب ال 
+            var user = await _userManager.FindByIdAsync(userId); //get the user by Id   
 
-            if (user is null) //لو طلع فاضي يعني اليوزر مش عندي اساسا     
+            if (user is null)      
                 return UserErrors.UserNotFound;
 
 
@@ -113,10 +113,10 @@ namespace SurveyBasket.API.Services
                 return UserErrors.DisabledUser;
                                                                      //refreshToken
             var userRefreshToken = user.RefreshTokens.SingleOrDefault(x => x.Token == refreshToken && x.IsActivate);
-                                                                    //هتاكد ان التوكن لسه شغال ويكون الريفريش اللي جاي هو اللي عندي
+                                                                    //sure the refresh token is still active and matches the one I have
 
 
-            if (userRefreshToken is null) //يبقي دا واحد غريب
+            if (userRefreshToken is null) //not found or revoked
                 return UserErrors.RefreshTokenNotMatched;
 
             userRefreshToken.RevokedOn = DateTime.UtcNow;
@@ -144,22 +144,21 @@ namespace SurveyBasket.API.Services
 
         public async Task<OneOf<bool,Error>> RevokeRefreshTokenAsync(string token, string refreshToken, CancellationToken cancellationToken = default)
         {
-            var userId = _jwtProvider.ValidateToken(token); //هتفك تشفير التوكن وتقارنه باللي عندي اللي كنت مكريته لو طلع تمم يبقي هيرجع ان في يوزر عايز يكريت واحد
+            var userId = _jwtProvider.ValidateToken(token); //decoding the token to get the userId, if it matches the one I created, it will return the userId, otherwise null
 
-            if (userId is null) //يعني التوكن غلط 
+            if (userId is null) 
                 return UserErrors.RefreshTokenNotMatched;
 
-            var user = await _userManager.FindByIdAsync(userId); //بتاع اليوزر ده  Id هروح اجيب ال 
+            var user = await _userManager.FindByIdAsync(userId); 
 
-            if (user is null) //لو طلع فاضي يعني اليوزر مش عندي اساسا     
+            if (user is null)    
                 return UserErrors.UserNotFound;
 
             //refreshToken
             var userRefreshToken = user.RefreshTokens.SingleOrDefault(x => x.Token == refreshToken && x.IsActivate);
-            //هتاكد ان التوكن لسه شغال ويكون الريفريش اللي جاي هو اللي عندي
 
 
-            if (userRefreshToken is null) //يبقي دا واحد غريب
+            if (userRefreshToken is null) 
                 return UserErrors.RefreshTokenRevoked;
 
             userRefreshToken.RevokedOn = DateTime.UtcNow;
@@ -179,7 +178,7 @@ namespace SurveyBasket.API.Services
             {
                 UserName = request.UserName,
                 Email = request.Email,
-               // PasswordHash = request.Password, //مش متشفره Plain text دا  غلط لانك كده بتحفظ كلسمة السر 
+                // PasswordHash = request.Password, //incorrect way to set password, use UserManager.CreateAsync instead
                 FirstName = request.FirstName,
                 LastName = request.LastName
             };
@@ -213,7 +212,7 @@ namespace SurveyBasket.API.Services
             if (User.EmailConfirmed)
                 return UserErrors.DublicatedConfirmation;
 
-            var code = request.Code; //try لازم امسكه بره عشان مش هيتشاف جوه ال 
+            var code = request.Code; 
 
             try
             {
@@ -258,7 +257,7 @@ namespace SurveyBasket.API.Services
         {
             var User = await _userManager.FindByEmailAsync(forgetPasswordRequest.Email);
             if (User == null)
-                return true; //عشان الهاكرز ممكن حد يكون بيجرب الاميلات 
+                return true; //to avoid information leakage, we return true even if the user is not found
 
             var code = await _userManager.GeneratePasswordResetTokenAsync(User);
             code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
@@ -315,10 +314,9 @@ namespace SurveyBasket.API.Services
                 { "{{action_url}}"  , $"{origin}/Auth/ConfirmEmail?userId={User.Id}&Code={Code}"}  
             });
 
-            //BackgroundJob.Enqueue(() =>
-          await  _emailSender.SendEmailAsync(User.Email!, "✅ Survey Basket: Email Confirmation ", emailBody);
+            BackgroundJob.Enqueue(() => _emailSender.SendEmailAsync(User.Email!, "✅ Survey Basket: Email Confirmation ", emailBody));
 
-            //await Task.CompletedTask;
+            await Task.CompletedTask;
         }
 
         private async Task SendResetPasswordEmail(ApplicationUser User, string Code)
@@ -331,10 +329,9 @@ namespace SurveyBasket.API.Services
                 { "{{action_url}}"  , $"{origin}/Auth/ForgetPassword?email={User.Email}&Code={Code}"}
             });
 
-            //BackgroundJob.Enqueue(async () => 
-            await _emailSender.SendEmailAsync(User.Email!, "✅ Survey Basket: Change Password ", emailBody);
+            BackgroundJob.Enqueue( () => _emailSender.SendEmailAsync(User.Email!, "✅ Survey Basket: Change Password ", emailBody));
 
-            //await Task.CompletedTask;
+            await Task.CompletedTask;
         }
 
 

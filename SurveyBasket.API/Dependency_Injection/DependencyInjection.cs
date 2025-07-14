@@ -85,9 +85,8 @@ namespace SurveyBasket.API.Code_For_Program
 
         public static IServiceCollection AddFluentValidation(this IServiceCollection service)
         {
-            //كل مره لما اعمل فاليديشن علي كل كلاس AddScoped دا  بدل اني اعمل 
             service
-                .AddFluentValidationAutoValidation() //دا عشان مكتبر هري كتير ف الكنترولر
+                .AddFluentValidationAutoValidation() 
                 .AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             return service;
@@ -105,7 +104,7 @@ namespace SurveyBasket.API.Code_For_Program
 
         public static IServiceCollection AddIdentityUserManager(this IServiceCollection service,IConfiguration configuration)
         {
-            //service.Configure<JwtOptionPattern>(configuration.GetSection(JwtOptionPattern.SectionName)); //عشان يعرف اني شغال بال اوبشن باترن 
+            //service.Configure<JwtOptionPattern>(configuration.GetSection(JwtOptionPattern.SectionName)); 
             
             service.AddOptions<JwtOptionPattern>()
                 .BindConfiguration(JwtOptionPattern.SectionName)
@@ -123,17 +122,17 @@ namespace SurveyBasket.API.Code_For_Program
                    .AddDefaultTokenProviders();
 
 
-            service.AddAuthentication(option =>  //عشان يبقي عارف نوع التوكن مش كل شويه اقوله انا بستخدم النووع ده bearer
+            service.AddAuthentication(option =>  
             {
                 option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
                 .AddJwtBearer(o =>
             {
-                o.SaveToken = true; //اقد راوصله طول منا شغال عادي 
+                o.SaveToken = true; 
                 o.TokenValidationParameters = new TokenValidationParameters
-                {//كلما زادت التعريفات دي زاد امان التوكن 
-                    ValidateIssuer = true, //بيقارن القيم اللي جايه بالقيم اللي ف التوكن عشان يتاكد ان التوكن تممم 
+                {
+                    ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
@@ -148,23 +147,13 @@ namespace SurveyBasket.API.Code_For_Program
                 // Default Lockout settings.
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 options.Lockout.MaxFailedAccessAttempts = 3;
-                options.Lockout.AllowedForNewUsers = true; // لو عملتها ترو كده اي يورز هيسجل هقفل الحاساب بتاعه 
+                options.Lockout.AllowedForNewUsers = true; 
                 options.Password.RequiredLength = 8;
-                  // لازم تعمل تاكيد للحساب عشان تقدر تدخل
-                options.SignIn.RequireConfirmedEmail = true;   //عشان ننفذ دول  SignInManager  لازم استخدم انتفير ال  
+                options.SignIn.RequireConfirmedEmail = true;   
                 options.User.RequireUniqueEmail = true;
             });
 
             service.Configure<MailSettings>(configuration.GetSection(nameof(MailSettings)));
-
-
-            //var test = new  //عشان اتاكد هو قاري ولا لا  هحط debug
-            //{
-            //     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]!)),
-            //        ValidIssuer = configuration["Jwt:Issuer"],
-            //        ValidAudience = configuration["Jwt:Audience"]
-            //};
-
 
             return service;
         }
